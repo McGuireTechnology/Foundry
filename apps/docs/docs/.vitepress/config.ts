@@ -3,6 +3,11 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Foundry Docs",
   description: "Foundry low-code platform documentation",
+  lang: "en-US",
+  cleanUrls: true,
+  sitemap: {
+    hostname: "https://docs.foundry.mcguire.technology"
+  },
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/getting-started" },
