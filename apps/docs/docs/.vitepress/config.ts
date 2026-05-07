@@ -25,7 +25,8 @@ export default defineConfig({
           items: [
             { text: "Architecture", link: "/reference/architecture" },
             { text: "Compose Layout", link: "/reference/compose-layout" },
-            { text: "Environment Files", link: "/reference/environment-files" }
+            { text: "Environment Files", link: "/reference/environment-files" },
+            { text: "Repository Management", link: "/reference/repository-management" }
           ]
         }
       ]
