@@ -30,6 +30,7 @@ export default defineConfig({
           text: "Guide",
           items: [
             { text: "Getting Started", link: "/guide/getting-started" },
+            { text: "Authentication", link: "/guide/authentication" },
             { text: "Docker Development", link: "/guide/docker-development" },
             { text: "Local Development", link: "/guide/local-development" }
           ]
@@ -42,7 +43,9 @@ export default defineConfig({
             { text: "Architecture", link: "/reference/architecture" },
             { text: "Compose Layout", link: "/reference/compose-layout" },
             { text: "Environment Files", link: "/reference/environment-files" },
-            { text: "Repository Management", link: "/reference/repository-management" }
+            { text: "Repository Management", link: "/reference/repository-management" },
+            { text: "Changelog", link: "/reference/changelog" },
+            { text: "Backlog", link: "/reference/backlog" }
           ]
         }
       ]

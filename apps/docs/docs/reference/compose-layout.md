@@ -15,7 +15,7 @@
 - local Traefik proxy (`proxy`)
 - local ports
 - `develop.watch` sync/rebuild rules
-- local path-based routes (`/api`, `/docs`, `/pgadmin`)
+- local host-based routes (`api.localhost`, `docs.localhost`, `pgadmin.localhost`)
 
 ## Traefik Overlay
 
