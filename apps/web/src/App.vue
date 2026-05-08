@@ -1,8 +1,11 @@
 <template>
   <div class="layout">
     <header class="topbar">
-      <h1>Foundry Builder</h1>
-      <p>FastAPI + Vue low-code platform starter</p>
+      <img class="brand-logo" src="/logo.svg" alt="Foundry logo" />
+      <div class="brand-copy">
+        <h1>Foundry</h1>
+        <p>by McGuire Technology, LLC</p>
+      </div>
     </header>
     <main>
       <RouterView />

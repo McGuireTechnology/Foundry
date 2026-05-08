@@ -24,9 +24,29 @@ body {
   margin: 0;
 }
 
-.topbar p {
-  margin-top: 8px;
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-copy p {
+  margin: 2px 0 0;
   color: #445;
+  font-size: 0.82rem;
+  line-height: 1.2;
 }
 
 .panel {
@@ -35,4 +55,24 @@ body {
   border: 1px solid #d8e0ec;
   border-radius: 10px;
   padding: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background: #000000;
+    color: #f5f7ff;
+  }
+
+  .brand-copy p {
+    color: #b8bfd4;
+  }
+
+  .panel {
+    background: #000000;
+    border-color: #2a2f44;
+  }
 }
