@@ -5,4 +5,6 @@ Foundry is a low-code platform by McGuire Technology, LLC, built with FastAPI, V
 
 Start with [Getting Started](/guide/getting-started).
 
+Authentication flow details are available in [Authentication](/guide/authentication).
+
 

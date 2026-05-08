@@ -14,10 +14,25 @@ body {
   color: #112;
 }
 
+#app {
+  min-height: 100vh;
+}
+
 .layout {
   max-width: 960px;
   margin: 0 auto;
   padding: 24px;
+}
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-main {
+  width: min(100%, 520px);
 }
 
 .topbar h1 {
@@ -28,6 +43,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .brand-logo {
@@ -57,6 +73,120 @@ body {
   padding: 20px;
 }
 
+.global-auth-banner {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #bfd3ff;
+  border-radius: 8px;
+  background: #eaf1ff;
+  color: #16336f;
+}
+
+.topnav {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.topnav a {
+  color: #1b4db3;
+  text-decoration: none;
+}
+
+.topnav a.router-link-active {
+  font-weight: 600;
+}
+
+.auth-panel {
+  max-width: 480px;
+}
+
+.auth-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.auth-wordmark .brand-logo {
+  width: 56px;
+  height: 56px;
+}
+
+.auth-wordmark .brand-copy h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.auth-wordmark .brand-copy p {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+.auth-form input {
+  border: 1px solid #b7c3da;
+  border-radius: 6px;
+  padding: 9px 10px;
+  font: inherit;
+}
+
+.auth-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.auth-checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.auth-form button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #1b4db3;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.auth-form button:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.auth-error {
+  margin: 0;
+  color: #b42318;
+}
+
+.auth-success {
+  margin: 0;
+  color: #137c42;
+}
+
+.auth-switch {
+  margin-bottom: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
@@ -74,5 +204,33 @@ body {
   .panel {
     background: #000000;
     border-color: #2a2f44;
+  }
+
+  .global-auth-banner {
+    border-color: #2c467d;
+    background: #0f1c39;
+    color: #cfe0ff;
+  }
+
+  .topnav a {
+    color: #97b6ff;
+  }
+
+  .auth-form input {
+    background: #0e1324;
+    color: #f5f7ff;
+    border-color: #2a3450;
+  }
+
+  .auth-form button {
+    background: #3a6ce0;
+  }
+
+  .auth-error {
+    color: #ff8a7a;
+  }
+
+  .auth-success {
+    color: #73d99f;
   }
 }
