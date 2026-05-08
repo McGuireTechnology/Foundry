@@ -1,7 +1,7 @@
 from datetime import UTC, datetime, timedelta
 
 import jwt
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, Header, HTTPException, status
 from sqlmodel import Session, select
 
 from app.core.config import settings
@@ -31,7 +31,8 @@ _login_attempts: dict[str, dict[str, datetime | int]] = {}
 
 @router.post("/token", response_model=TokenResponse)
 def login_for_tokens(payload: TokenRequest, session: Session = Depends(get_session)) -> TokenResponse:
-    key = payload.email.strip().lower()
+    normalized_email = _normalize_email(payload.email)
+    key = normalized_email
     attempts = _login_attempts.get(key)
     if attempts:
         locked_until = attempts.get("locked_until")
@@ -41,7 +42,7 @@ def login_for_tokens(payload: TokenRequest, session: Session = Depends(get_sessi
                 detail="Too many failed attempts. Please wait and try again.",
             )
 
-    user = session.exec(select(User).where(User.email == payload.email)).first()
+    user = session.exec(select(User).where(User.email == normalized_email)).first()
     if user is None or not verify_password(payload.password, user.hashed_password):
         _record_failed_attempt(key)
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
@@ -53,7 +54,7 @@ def login_for_tokens(payload: TokenRequest, session: Session = Depends(get_sessi
 
 
 @router.post("/refresh", response_model=TokenResponse)
-def refresh_tokens(payload: RefreshTokenRequest) -> TokenResponse:
+def refresh_tokens(payload: RefreshTokenRequest, session: Session = Depends(get_session)) -> TokenResponse:
     try:
         claims = decode_token(payload.refresh_token)
     except jwt.PyJWTError as exc:
@@ -66,6 +67,10 @@ def refresh_tokens(payload: RefreshTokenRequest) -> TokenResponse:
     if not subject:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token")
 
+    user = session.get(User, subject)
+    if user is None or not user.is_active:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token")
+
     access_token = create_access_token(subject=subject)
     refresh_token = create_refresh_token(subject=subject)
     return TokenResponse(access_token=access_token, refresh_token=refresh_token)
@@ -74,7 +79,8 @@ def refresh_tokens(payload: RefreshTokenRequest) -> TokenResponse:
 @router.post("/forgot-password", response_model=ForgotPasswordResponse)
 def forgot_password(payload: ForgotPasswordRequest, session: Session = Depends(get_session)) -> ForgotPasswordResponse:
     # Primitive flow: do not reveal whether the email exists.
-    user = session.exec(select(User).where(User.email == payload.email)).first()
+    normalized_email = _normalize_email(payload.email)
+    user = session.exec(select(User).where(User.email == normalized_email)).first()
     reset_token = None
     if user is not None and settings.env == "dev":
         reset_token = create_reset_password_token(subject=user.email)
@@ -99,7 +105,7 @@ def reset_password(payload: ResetPasswordRequest, session: Session = Depends(get
     if not subject:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid reset token")
 
-    user = session.exec(select(User).where(User.email == subject)).first()
+    user = session.exec(select(User).where(User.email == _normalize_email(subject))).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
@@ -118,3 +124,37 @@ def _record_failed_attempt(key: str) -> None:
         record["locked_until"] = now + timedelta(minutes=settings.login_lockout_minutes)
         record["count"] = 0
     _login_attempts[key] = record
+
+
+def require_current_user(
+    session: Session = Depends(get_session),
+    authorization: str | None = Header(default=None),
+) -> User:
+    if authorization is None or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    token = authorization.removeprefix("Bearer ").strip()
+    if not token:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    try:
+        claims = decode_token(token)
+    except jwt.PyJWTError as exc:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated") from exc
+
+    if claims.get("type") != "access":
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    subject = claims.get("sub")
+    if not subject:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    user = session.get(User, subject)
+    if user is None or not user.is_active:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
+
+    return user
+
+
+def _normalize_email(email: str) -> str:
+    return email.strip().lower()
