@@ -1,17 +1,28 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "Foundry Docs",
-  description: "Foundry low-code platform documentation",
+  title: "Foundry",
+  description: "Official documentation for Foundry by McGuire Technology, LLC",
   lang: "en-US",
   cleanUrls: true,
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }]
+  ],
   sitemap: {
     hostname: "https://docs.foundry.mcguire.technology"
   },
   themeConfig: {
+    footer: {
+      message: "Licensed under the MIT License.",
+      copyright: "Copyright (c) 2026 McGuire Technology, LLC"
+    },
+    logo: "/logo.svg",
     nav: [
       { text: "Guide", link: "/guide/getting-started" },
       { text: "Reference", link: "/reference/architecture" }
+    ],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/McGuireTechnology/Foundry" }
     ],
     sidebar: {
       "/guide/": [

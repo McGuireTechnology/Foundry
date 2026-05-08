@@ -1,6 +1,7 @@
-# Foundry Docs
+# Foundry
+## by McGuire Technology, LLC
 
-Foundry is a low-code platform built with FastAPI, Vue, and VitePress.
+Foundry is a low-code platform by McGuire Technology, LLC, built with FastAPI, Vue, and VitePress.
 
 Start with [Getting Started](/guide/getting-started).
 

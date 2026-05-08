@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --vp-font-family-base: "Ubuntu", sans-serif;
+  --vp-font-family-mono: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html.dark {
+  --vp-c-bg: #000000;
+  --vp-c-bg-soft: #000000;
+  --vp-c-bg-alt: #000000;
+  --vp-c-bg-elv: #000000;
+}
+
+.VPDoc,
+.VPNavBar,
+.VPNavBarTitle {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* GitHub social icon color by theme */
+.VPSocialLinks .VPSocialLink {
+  color: #000000;
+}
+
+html.dark .VPSocialLinks .VPSocialLink {
+  color: #ffffff;
+}
+
+/* Top bar branding */
+.VPNavBarTitle {
+  align-items: center;
+  min-height: 56px;
+}
+
+.VPNavBarTitle .title {
+  display: grid;
+  grid-template-columns: 48px auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.VPNavBarTitle .title span {
+  grid-column: 2;
+  text-align: left;
+  justify-self: start;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.VPNavBarTitle .title span::after {
+  content: "by McGuire Technology, LLC";
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  opacity: 0.78;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-top: 0.18rem;
+}
+
+.VPNavBarTitle .logo {
+  grid-column: 1;
+  grid-row: 1;
+  width: 48px;
+  height: 48px;
+  margin-right: 0;
+}
+
+@media (max-width: 960px) {
+  .VPNavBarTitle .title span {
+    font-size: 1.16rem;
+  }
+
+  .VPNavBarTitle .title span::after {
+    font-size: 0.56rem;
+  }
+
+  .VPNavBarTitle .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
