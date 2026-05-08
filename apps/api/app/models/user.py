@@ -8,3 +8,4 @@ class User(SQLModel, table=True):
     email: str = Field(index=True, unique=True, max_length=255)
     hashed_password: str
     is_active: bool = Field(default=True)
+    refresh_token_version: int = Field(default=0)

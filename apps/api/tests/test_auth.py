@@ -46,6 +46,16 @@ def test_signup_and_signin_happy_path() -> None:
     assert payload["token_type"] == "bearer"
 
 
+def test_signup_rejects_unprompted_fields() -> None:
+    client = _create_client()
+    response = client.post(
+        "/users",
+        headers=_headers(),
+        json={"email": "strict@example.com", "password": "strongpass123", "is_active": True},
+    )
+    assert response.status_code == 422
+
+
 def test_users_endpoints_require_authentication() -> None:
     client = _create_client()
     client.post(
@@ -162,6 +172,45 @@ def test_reset_password_flow() -> None:
         json={"email": "reset@example.com", "password": "newpassword123"},
     )
     assert signin.status_code == 200
+
+
+def test_password_reset_invalidates_existing_refresh_tokens() -> None:
+    client = _create_client()
+    client.post(
+        "/users",
+        headers=_headers(),
+        json={"email": "revoke@example.com", "password": "oldpassword123"},
+    )
+
+    signin = client.post(
+        "/auth/token",
+        headers=_headers(),
+        json={"email": "revoke@example.com", "password": "oldpassword123"},
+    )
+    assert signin.status_code == 200
+    old_refresh_token = signin.json()["refresh_token"]
+
+    forgot = client.post(
+        "/auth/forgot-password",
+        headers=_headers(),
+        json={"email": "revoke@example.com"},
+    )
+    token = forgot.json().get("reset_token")
+    assert token
+
+    reset = client.post(
+        "/auth/reset-password",
+        headers=_headers(),
+        json={"token": token, "new_password": "newpassword123"},
+    )
+    assert reset.status_code == 200
+
+    refreshed = client.post(
+        "/auth/refresh",
+        headers=_headers(),
+        json={"refresh_token": old_refresh_token},
+    )
+    assert refreshed.status_code == 401
 
 
 def test_refresh_fails_for_inactive_user() -> None:

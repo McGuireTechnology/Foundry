@@ -25,9 +25,14 @@ def create_access_token(subject: str) -> str:
     return _create_token(subject=subject, expires_delta=expires_delta, token_type="access")
 
 
-def create_refresh_token(subject: str) -> str:
+def create_refresh_token(subject: str, refresh_version: int = 0) -> str:
     expires_delta = timedelta(minutes=settings.refresh_token_expire_minutes)
-    return _create_token(subject=subject, expires_delta=expires_delta, token_type="refresh")
+    return _create_token(
+        subject=subject,
+        expires_delta=expires_delta,
+        token_type="refresh",
+        extra_claims={"rv": refresh_version},
+    )
 
 
 def create_reset_password_token(subject: str) -> str:
@@ -39,7 +44,12 @@ def decode_token(token: str) -> dict:
     return jwt.decode(token, settings.secret_key, algorithms=[settings.jwt_algorithm])
 
 
-def _create_token(subject: str, expires_delta: timedelta, token_type: str) -> str:
+def _create_token(
+    subject: str,
+    expires_delta: timedelta,
+    token_type: str,
+    extra_claims: dict | None = None,
+) -> str:
     now = datetime.now(UTC)
     payload = {
         "sub": subject,
@@ -47,4 +57,6 @@ def _create_token(subject: str, expires_delta: timedelta, token_type: str) -> st
         "iat": int(now.timestamp()),
         "exp": int((now + expires_delta).timestamp()),
     }
+    if extra_claims:
+        payload.update(extra_claims)
     return jwt.encode(payload, settings.secret_key, algorithm=settings.jwt_algorithm)

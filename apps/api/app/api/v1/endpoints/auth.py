@@ -49,7 +49,7 @@ def login_for_tokens(payload: TokenRequest, session: Session = Depends(get_sessi
 
     _login_attempts.pop(key, None)
     access_token = create_access_token(subject=user.id)
-    refresh_token = create_refresh_token(subject=user.id)
+    refresh_token = create_refresh_token(subject=user.id, refresh_version=user.refresh_token_version)
     return TokenResponse(access_token=access_token, refresh_token=refresh_token)
 
 
@@ -71,8 +71,12 @@ def refresh_tokens(payload: RefreshTokenRequest, session: Session = Depends(get_
     if user is None or not user.is_active:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token")
 
+    token_refresh_version = claims.get("rv")
+    if token_refresh_version != user.refresh_token_version:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid refresh token")
+
     access_token = create_access_token(subject=subject)
-    refresh_token = create_refresh_token(subject=subject)
+    refresh_token = create_refresh_token(subject=subject, refresh_version=user.refresh_token_version)
     return TokenResponse(access_token=access_token, refresh_token=refresh_token)
 
 
@@ -110,6 +114,7 @@ def reset_password(payload: ResetPasswordRequest, session: Session = Depends(get
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
     user.hashed_password = hash_password(payload.new_password)
+    user.refresh_token_version += 1
     session.add(user)
     session.commit()
     return MessageResponse(message="Password reset complete. You can now sign in.")
