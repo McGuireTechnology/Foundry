@@ -25,6 +25,7 @@ Status labels:
 - [ ] Add repository-level `CODEOWNERS` for `apps/api`, `apps/web`, and `infra`.
 - [ ] Add integration tests validating browser-to-API CORS behavior for auth endpoints.
 - [ ] Replace in-memory login attempt tracking with persistent and distributed-safe storage.
+- [ ] Move runtime schema mutations from app startup into Alembic migrations (remove `init_db` DDL side effects).
 
 ## Later
 
