@@ -1,7 +1,7 @@
 {
   "name": "foundry",
   "private": true,
-  "version": "0.1.1",
+  "version": "26.5.6",
   "description": "Foundry low-code app platform monorepo",
   "packageManager": "pnpm@10.0.0",
   "scripts": {
@@ -23,4 +23,5 @@
     "db:down": "docker compose stop postgres"
   }
 }
+
 
