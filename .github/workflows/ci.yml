@@ -21,3 +21,26 @@ jobs:
         run: pnpm install --frozen-lockfile=false
       - name: Typecheck
         run: pnpm typecheck
+
+  apple-client-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build Foundry for macOS
+        run: >
+          xcodebuild
+          -project apps/apple/Foundry/Foundry.xcodeproj
+          -scheme Foundry
+          -configuration Debug
+          -destination 'platform=macOS'
+          CODE_SIGNING_ALLOWED=NO
+          build
+      - name: Build Foundry for iOS Simulator
+        run: >
+          xcodebuild
+          -project apps/apple/Foundry/Foundry.xcodeproj
+          -scheme Foundry
+          -configuration Debug
+          -destination 'generic/platform=iOS Simulator'
+          CODE_SIGNING_ALLOWED=NO
+          build

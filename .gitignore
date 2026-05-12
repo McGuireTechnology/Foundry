@@ -16,3 +16,9 @@ coverage
 .idea
 *.egg-info
 apps/docs/docs/.vitepress/cache
+DerivedData
+*.xcodeproj/xcuserdata
+*.xcworkspace/xcuserdata
+*.xcodeproj/xcuserdata/**
+*.xcworkspace/xcuserdata/**
+*.xcuserstate
