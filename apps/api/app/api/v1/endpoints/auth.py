@@ -1,7 +1,8 @@
 from datetime import UTC, datetime, timedelta
 
 import jwt
-from fastapi import APIRouter, Depends, Header, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
 from sqlmodel import Session, select
 
 from app.core.config import settings
@@ -26,6 +27,7 @@ from app.services.security import (
 )
 
 router = APIRouter()
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
 _login_attempts: dict[str, dict[str, datetime | int]] = {}
 
 
@@ -133,15 +135,8 @@ def _record_failed_attempt(key: str) -> None:
 
 def require_current_user(
     session: Session = Depends(get_session),
-    authorization: str | None = Header(default=None),
+    token: str = Depends(oauth2_scheme),
 ) -> User:
-    if authorization is None or not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
-
-    token = authorization.removeprefix("Bearer ").strip()
-    if not token:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
-
     try:
         claims = decode_token(token)
     except jwt.PyJWTError as exc:
