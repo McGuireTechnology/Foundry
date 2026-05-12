@@ -13,7 +13,7 @@ This page defines where documentation should live as Foundry grows.
 ## Shared and Audience Structure
 
 - `developers/repository-management/`: branching, commits, PR strategy, release strategy, ownership, and hygiene.
-- `admins/backlog.md`: prioritized planning and maintenance rules.
+- `/admins/backlog`: prioritized planning and maintenance rules.
 - `changelog/`: release history and unreleased deltas shared across audiences.
 - audience pages: focused policies and templates (for example, testing, security, incidents, release operations).
 
@@ -22,8 +22,8 @@ This page defines where documentation should live as Foundry grows.
 - Put user workflows in `users/`.
 - Put engineering standards and implementation guidance in `developers/`.
 - Put operational/project administration guidance in `admins/`.
-- Put future/planned work in `admins/backlog.md`.
-- Put shipped work in `changelog/`.
+- Put future/planned work in `/admins/backlog`.
+- Put shipped work in `/changelog/`.
 
 ## Naming Rules
 

@@ -11,9 +11,9 @@
 - Behavior verified locally
 - Docs updated when behavior/config changed
 - Feature updates include documentation updates in:
-  - backlog (`admins/backlog.md`)
-  - changelog (`changelog/index.md`)
-  - relevant feature-specific docs (for example, `users/authentication.md`)
+  - backlog (`/admins/backlog`)
+  - changelog (`/changelog/`)
+  - relevant feature-specific docs (for example, `/users/authentication`)
 - New config keys added to `.env*.example`
 - No secrets committed
 - AI review run (prompt example: `Please review my PR`) using Codex and Codex Security when applicable
