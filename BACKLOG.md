@@ -1,5 +1,11 @@
 # Foundry Backlog
 
+## Platform
+
+- [ ] Add API and dashboard end-to-end tests for Applications and Databases CRUD flows.
+- [ ] Add authorization policies for Tables, Columns, Records, and Values resources.
+- [ ] Add pagination and filtering support to list-heavy dashboard views.
+
 ## Apple Client
 
 - [ ] Add automated tests for `AppSession`, `CredentialsStore`, and `FoundryAPIClient` (unit coverage plus request/response stubs).
