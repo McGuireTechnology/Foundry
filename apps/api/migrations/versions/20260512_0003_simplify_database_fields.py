@@ -15,6 +15,8 @@ revision: str = "20260512_0003"
 down_revision: str | None = "20260512_0002"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
+# Alembic reads these module-level identifiers dynamically.
+_ = (revision, down_revision, branch_labels, depends_on)
 
 
 def upgrade() -> None:
