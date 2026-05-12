@@ -3,6 +3,9 @@
 :root {
   --vp-font-family-base: "Ubuntu", sans-serif;
   --vp-font-family-mono: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --vp-c-brand-1: #0b63ce;
+  --vp-c-brand-2: #0a58b8;
+  --vp-c-brand-3: #084a9b;
 }
 
 html.dark {
@@ -10,6 +13,9 @@ html.dark {
   --vp-c-bg-soft: #000000;
   --vp-c-bg-alt: #000000;
   --vp-c-bg-elv: #000000;
+  --vp-c-brand-1: #6aa9ff;
+  --vp-c-brand-2: #8bbcff;
+  --vp-c-brand-3: #4e96fb;
 }
 
 .VPDoc,
@@ -30,55 +36,160 @@ html.dark .VPSocialLinks .VPSocialLink {
 /* Top bar branding */
 .VPNavBarTitle {
   align-items: center;
-  min-height: 56px;
+  min-height: 52px;
 }
 
 .VPNavBarTitle .title {
   display: grid;
-  grid-template-columns: 48px auto;
-  column-gap: 10px;
+  grid-template-columns: 60px auto;
+  column-gap: 5px;
   align-items: center;
+  row-gap: 0;
+  margin-top: 1px;
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 12px;
 }
 
 .VPNavBarTitle .title span {
   grid-column: 2;
   text-align: left;
   justify-self: start;
-  font-size: 1.4rem;
+  font-size: 1.42rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.0;
+  letter-spacing: 0.005em;
 }
 
 .VPNavBarTitle .title span::after {
-  content: "by McGuire Technology, LLC";
-  display: block;
-  font-size: 0.62rem;
+  content: " Docs";
+  display: inline;
+  margin-left: 0.26rem;
+  font-size: 0.58em;
   font-weight: 500;
-  opacity: 0.78;
+  opacity: 0.68;
   letter-spacing: 0.01em;
-  line-height: 1.2;
-  margin-top: 0.18rem;
+  vertical-align: baseline;
+}
+
+.VPNavBarTitle .title::after {
+  content: "by McGuire Technology, LLC";
+  display: inline-block;
+  position: absolute;
+  left: 64px;
+  top: 26px;
+  font-size: 0.64rem;
+  font-weight: 500;
+  opacity: 0.84;
+  letter-spacing: 0.01em;
+  line-height: 1.0;
+  margin-top: 0;
+  white-space: nowrap;
 }
 
 .VPNavBarTitle .logo {
   grid-column: 1;
-  grid-row: 1;
-  width: 48px;
-  height: 48px;
+  grid-row: 1 / span 2;
+  align-self: center;
+  width: 56px;
+  height: 56px;
   margin-right: 0;
 }
 
 @media (max-width: 960px) {
+  .VPNavBarTitle {
+    min-height: 48px;
+  }
+
+  .VPNavBarTitle .title {
+    grid-template-columns: 50px auto;
+    column-gap: 4px;
+    margin-top: 0;
+    padding-bottom: 10px;
+  }
+
   .VPNavBarTitle .title span {
-    font-size: 1.16rem;
+    font-size: 1.04rem;
+    line-height: 1;
   }
 
   .VPNavBarTitle .title span::after {
+    margin-left: 0.2rem;
+    font-size: 0.56em;
+  }
+
+  .VPNavBarTitle .title::after {
     font-size: 0.56rem;
+    left: 53px;
+    top: 21px;
+    margin-top: 0;
   }
 
   .VPNavBarTitle .logo {
     width: 40px;
     height: 40px;
   }
+}
+
+/* Sidebar hierarchy clarity */
+.VPSidebar {
+  --foundry-sidebar-guide: color-mix(in srgb, var(--vp-c-text-2) 28%, transparent);
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.VPSidebarItem.level-0 .items {
+  margin-top: 0.32rem;
+  margin-left: 0.65rem;
+  padding-left: 0.78rem;
+  border-left: 1px solid var(--foundry-sidebar-guide);
+}
+
+.VPSidebarItem.level-1 > .item > .text,
+.VPSidebarItem.level-2 > .item > .text {
+  font-weight: 500;
+}
+
+.VPSidebarItem.level-1 .items,
+.VPSidebarItem.level-2 .items {
+  margin-left: 0.55rem;
+  padding-left: 0.68rem;
+  border-left: 1px solid var(--foundry-sidebar-guide);
+}
+
+.VPSidebar .VPSidebarItem .item {
+  border-radius: 8px;
+}
+
+.VPSidebar .VPSidebarItem .item.is-active {
+  background: color-mix(in srgb, var(--vp-c-brand-1) 14%, transparent);
+}
+
+/* Link color polish for readability in both themes */
+.vp-doc a,
+.VPDoc a,
+.VPSidebar a,
+.VPNavBar a {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc a:hover,
+.VPDoc a:hover,
+.VPSidebar a:hover,
+.VPNavBar a:hover {
+  color: var(--vp-c-brand-2);
+}
+
+.vp-doc a:visited,
+.VPDoc a:visited {
+  color: var(--vp-c-brand-3);
+}
+
+.docs-report-link {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  color: var(--vp-c-text-2);
 }
