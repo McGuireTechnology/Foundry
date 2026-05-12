@@ -5,9 +5,8 @@ export default defineConfig({
   description: "Official documentation for Foundry by McGuire Technology, LLC",
   lang: "en-US",
   cleanUrls: true,
-  head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }]
-  ],
+  lastUpdated: true,
+  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }]],
   sitemap: {
     hostname: "https://docs.foundry.mcguire.technology"
   },
@@ -18,37 +17,93 @@ export default defineConfig({
     },
     logo: "/logo.svg",
     nav: [
-      { text: "Guide", link: "/guide/getting-started" },
-      { text: "Reference", link: "/reference/architecture" }
+      { text: "Users", link: "/users/" },
+      { text: "Admins", link: "/admins/" },
+      { text: "Developers", link: "/developers/" },
+      { text: "Community", link: "/community/" },
+      { text: "Changelog", link: "/changelog/" }
     ],
-    socialLinks: [
-      { icon: "github", link: "https://github.com/McGuireTechnology/Foundry" }
-    ],
+    editLink: {
+      pattern: "https://github.com/McGuireTechnology/Foundry/edit/main/apps/docs/docs/:path",
+      text: "Edit this page on GitHub"
+    },
+    lastUpdatedText: "Last updated",
+    socialLinks: [{ icon: "github", link: "https://github.com/McGuireTechnology/Foundry" }],
     sidebar: {
-      "/guide/": [
+      "/users/": [
         {
-          text: "Guide",
+          text: "Users",
           items: [
-            { text: "Getting Started", link: "/guide/getting-started" },
-            { text: "Authentication", link: "/guide/authentication" },
-            { text: "Docker Development", link: "/guide/docker-development" },
-            { text: "Local Development", link: "/guide/local-development" }
+            { text: "Overview", link: "/users/" },
+            { text: "Authentication", link: "/users/authentication" }
           ]
         }
       ],
-      "/reference/": [
+      "/developers/repository-management/": [
         {
-          text: "Reference",
           items: [
-            { text: "Architecture", link: "/reference/architecture" },
-            { text: "Compose Layout", link: "/reference/compose-layout" },
-            { text: "Environment Files", link: "/reference/environment-files" },
-            { text: "Repository Management", link: "/reference/repository-management" },
-            { text: "Changelog", link: "/reference/changelog" },
-            { text: "Backlog", link: "/reference/backlog" }
+            { text: "↖ Developers", link: "/developers/" },
+            { text: "Overview", link: "/developers/repository-management/" },
+            { text: "Branching Strategy", link: "/developers/repository-management/branching-strategy" },
+            { text: "Commit Strategy", link: "/developers/repository-management/commit-strategy" },
+            { text: "Pull Request Strategy", link: "/developers/repository-management/pull-request-strategy" },
+            { text: "Release Strategy", link: "/developers/repository-management/release-strategy" },
+            { text: "Ownership and Code Review", link: "/developers/repository-management/ownership-and-code-review" },
+            { text: "Dependency and Security Hygiene", link: "/developers/repository-management/dependency-and-security-hygiene" }
           ]
+        }
+      ],
+      "/admins/": [
+        {
+          text: "Admins",
+          items: [
+            { text: "Overview", link: "/admins/" },
+            { text: "Release Checklist", link: "/admins/release-checklist" },
+            { text: "Backlog", link: "/admins/backlog" },
+            { text: "Changelog", link: "/changelog/" },
+            { text: "Incident Notes", link: "/admins/incident-notes" }
+          ]
+        }
+      ],
+      "/developers/": [
+        {
+          text: "Developers",
+          items: [
+            { text: "Overview", link: "/developers/" },
+            { text: "Getting Started", link: "/developers/getting-started" },
+            { text: "Local Development", link: "/developers/local-development" },
+            { text: "Docker Development", link: "/developers/docker-development" },
+            { text: "Architecture", link: "/developers/architecture" },
+            { text: "Compose Layout", link: "/developers/compose-layout" },
+            { text: "Environment Files", link: "/developers/environment-files" },
+            { text: "Environment Baseline", link: "/developers/environment-baseline" },
+            { text: "Testing Strategy", link: "/developers/testing-strategy" },
+            { text: "Security Baseline", link: "/developers/security-baseline" },
+            { text: "Deprecation Policy", link: "/developers/deprecation-policy" },
+            { text: "Definition of Done", link: "/developers/definition-of-done" },
+            { text: "Repository Management", link: "/developers/repository-management/" },
+            { text: "Docs Information Architecture", link: "/developers/docs-information-architecture" },
+            { text: "Changelog", link: "/changelog/" }
+          ]
+        }
+      ],
+      "/changelog/": [
+        {
+          text: "Changelog",
+          items: [
+            { text: "Overview", link: "/changelog/" },
+            { text: "Unreleased", link: "/changelog/unreleased" },
+            { text: "v0.1.0 (2026-05-07)", link: "/changelog/v0.1.0" }
+          ]
+        }
+      ],
+      "/community/": [
+        {
+          text: "Community",
+          items: [{ text: "Overview", link: "/community/" }]
         }
       ]
     }
   }
 });
+

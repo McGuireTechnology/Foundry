@@ -3,8 +3,11 @@
 
 Foundry is a low-code platform by McGuire Technology, LLC, built with FastAPI, Vue, and VitePress.
 
-Start with [Getting Started](/guide/getting-started).
+Start here by audience:
 
-Authentication flow details are available in [Authentication](/guide/authentication).
+- [Users](/users/)
+- [Admins](/admins/)
+- [Developers](/developers/)
+- [Community](/community/)
 
-
+Copyright (c) 2026 McGuire Technology, LLC. Licensed under the MIT License.
