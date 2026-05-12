@@ -26,6 +26,12 @@ Status labels:
 - [ ] Add integration tests validating browser-to-API CORS behavior for auth endpoints.
 - [ ] Replace in-memory login attempt tracking with persistent and distributed-safe storage.
 - [ ] Move runtime schema mutations from app startup into Alembic migrations (remove `init_db` DDL side effects).
+- [ ] Add docs PR preview deployment links to pull requests.
+- [ ] Add docs link checking and markdown linting in CI for docs-only and mixed PRs.
+- [ ] Add `CODEOWNERS` coverage for docs sections by audience (`users`, `admins`, `developers`, `community`).
+- [ ] Add PR template prompts for changelog coverage and docs impact notes.
+- [ ] Define docs contribution workflow page with branch conventions and review expectations.
+- [ ] Add docs feedback/discussion links for asynchronous community input.
 
 ## Later
 
