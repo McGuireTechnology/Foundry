@@ -14,6 +14,8 @@ Status labels:
 - [x] Expand API test coverage for auth flows and user endpoints.
 - [x] Implement primitive auth UX pages and token-based sign-in lifecycle.
 - [x] Add local development CORS support for web-to-api auth requests (`localhost` and `127.0.0.1`).
+- [x] Implement CRUD for Applications and Databases in API and dashboard.
+- [x] Implement core Tables, Columns, Records, and Values endpoints with convenience relationship routes.
 - [ ] Add CI checks for docs link integrity and markdown linting.
 - [ ] Add release workflow checklist tied to changelog updates.
 
@@ -32,6 +34,9 @@ Status labels:
 - [ ] Add PR template prompts for changelog coverage and docs impact notes.
 - [ ] Define docs contribution workflow page with branch conventions and review expectations.
 - [ ] Add docs feedback/discussion links for asynchronous community input.
+- [ ] Add pagination, filtering, and sorting to Applications and Databases list endpoints and dashboard tables.
+- [ ] Add per-resource role-based authorization for Applications, Databases, Tables, Columns, Records, and Values.
+- [ ] Add end-to-end tests for convenience endpoints (`/databases/{id}/tables`, `/tables/{id}/records`, etc.).
 
 ## Later
 
@@ -39,6 +44,7 @@ Status labels:
 - [ ] Add production deployment guides for container and cloud targets.
 - [ ] Add multi-tenant organization and workspace data model docs.
 - [ ] Establish performance budgets and frontend monitoring for web app UX.
+- [ ] Design and implement Data Connectors as a separate concept from internal Databases.
 
 ## Backlog Maintenance
 

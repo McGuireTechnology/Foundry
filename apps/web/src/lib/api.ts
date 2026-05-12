@@ -1,4 +1,4 @@
-import { apiBaseUrl, clearTokens, getRefreshToken, hasAccessToken, storeTokens } from "./auth";
+import { apiBaseUrl, clearTokens, getAccessToken, getRefreshToken, hasAccessToken, storeTokens } from "./auth";
 import { setAuthBanner } from "./authBanner";
 
 type ApiFetchOptions = {
@@ -11,12 +11,13 @@ export async function apiFetch(
   options: ApiFetchOptions = {}
 ): Promise<Response> {
   const { redirectOn401 = true } = options;
-  let response = await fetch(`${apiBaseUrl}${path}`, init);
+  const requestInit = withDefaultHeaders(init);
+  let response = await fetch(`${apiBaseUrl}${path}`, requestInit);
 
   if (response.status === 401 && hasAccessToken()) {
     const refreshed = await tryRefreshToken();
     if (refreshed) {
-      response = await fetch(`${apiBaseUrl}${path}`, init);
+      response = await fetch(`${apiBaseUrl}${path}`, withDefaultHeaders(init));
     }
   }
 
@@ -39,6 +40,21 @@ export async function apiFetch(
   }
 
   return response;
+}
+
+function withDefaultHeaders(init?: RequestInit): RequestInit {
+  const headers = new Headers(init?.headers ?? {});
+  headers.set("X-API-Version", "v1");
+  if (!headers.has("Content-Type") && init?.body) {
+    headers.set("Content-Type", "application/json");
+  }
+
+  const accessToken = getAccessToken();
+  if (accessToken && !headers.has("Authorization")) {
+    headers.set("Authorization", `Bearer ${accessToken}`);
+  }
+
+  return { ...init, headers };
 }
 
 async function tryRefreshToken(): Promise<boolean> {

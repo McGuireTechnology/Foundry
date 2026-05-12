@@ -35,7 +35,9 @@ export default defineConfig({
           text: "Users",
           items: [
             { text: "Overview", link: "/users/" },
-            { text: "Authentication", link: "/users/authentication" }
+            { text: "Authentication", link: "/users/authentication" },
+            { text: "Applications", link: "/users/applications" },
+            { text: "Databases", link: "/users/databases" }
           ]
         }
       ],
