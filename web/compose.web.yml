@@ -1,0 +1,24 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: web/web.Dockerfile
+    restart: "no"
+    working_dir: /workspace
+    command: npm run dev --prefix web -- --host 0.0.0.0 --port 5173
+    ports:
+      - "5173:5173"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.vortex-web.rule=Host(`app.localhost`) || Host(`localhost`)
+      - traefik.http.routers.vortex-web.entrypoints=http
+      - traefik.http.services.vortex-web.loadbalancer.server.port=5173
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./web
+          target: /workspace/web
+        - action: rebuild
+          path: ./web/package.json
+        - action: rebuild
+          path: ./web/package-lock.json

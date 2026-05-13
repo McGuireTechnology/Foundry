@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* VortexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000001 /* VortexApp.swift */; };
+		A10000000000000000000002 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000002 /* AppEnvironment.swift */; };
+		A10000000000000000000003 /* VortexModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000003 /* VortexModels.swift */; };
+		A10000000000000000000004 /* VortexAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000004 /* VortexAPIClient.swift */; };
+		A10000000000000000000005 /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000005 /* CredentialsStore.swift */; };
+		A10000000000000000000006 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000006 /* AppSession.swift */; };
+		A10000000000000000000007 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000007 /* RootView.swift */; };
+		A10000000000000000000008 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000008 /* SignInView.swift */; };
+		A10000000000000000000009 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000000000000009 /* DashboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B100000000000000000000000 /* Vortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B100000000000000000000001 /* VortexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VortexApp.swift; sourceTree = "<group>"; };
+		B100000000000000000000002 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		B100000000000000000000003 /* VortexModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VortexModels.swift; sourceTree = "<group>"; };
+		B100000000000000000000004 /* VortexAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VortexAPIClient.swift; sourceTree = "<group>"; };
+		B100000000000000000000005 /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
+		B100000000000000000000006 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
+		B100000000000000000000007 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B100000000000000000000008 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B100000000000000000000009 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D100000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C100000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				C100000000000000000000003 /* Products */,
+				C100000000000000000000004 /* App */,
+				C100000000000000000000005 /* Config */,
+				C100000000000000000000006 /* Models */,
+				C100000000000000000000007 /* Networking */,
+				C100000000000000000000008 /* Session */,
+				C100000000000000000000009 /* Views */,
+			);
+			sourceTree = "<group>";
+		};
+		C100000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000000 /* Vortex.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000001 /* VortexApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000005 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000002 /* AppEnvironment.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000003 /* VortexModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000007 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000004 /* VortexAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000008 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000005 /* CredentialsStore.swift */,
+				B100000000000000000000006 /* AppSession.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		C100000000000000000000009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000000000000007 /* RootView.swift */,
+				B100000000000000000000008 /* SignInView.swift */,
+				B100000000000000000000009 /* DashboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E100000000000000000000001 /* Vortex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = H100000000000000000000002 /* Build configuration list for PBXNativeTarget "Vortex" */;
+			buildPhases = (
+				D100000000000000000000002 /* Sources */,
+				D100000000000000000000003 /* Frameworks */,
+				D100000000000000000000004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vortex;
+			productName = Vortex;
+			productReference = B100000000000000000000000 /* Vortex.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F100000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					E100000000000000000000001 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = H100000000000000000000001 /* Build configuration list for PBXProject "Vortex" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C100000000000000000000001;
+			productRefGroup = C100000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E100000000000000000000001 /* Vortex */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D100000000000000000000004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D100000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* VortexApp.swift in Sources */,
+				A10000000000000000000002 /* AppEnvironment.swift in Sources */,
+				A10000000000000000000003 /* VortexModels.swift in Sources */,
+				A10000000000000000000004 /* VortexAPIClient.swift in Sources */,
+				A10000000000000000000005 /* CredentialsStore.swift in Sources */,
+				A10000000000000000000006 /* AppSession.swift in Sources */,
+				A10000000000000000000007 /* RootView.swift in Sources */,
+				A10000000000000000000008 /* SignInView.swift in Sources */,
+				A10000000000000000000009 /* DashboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		G100000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = MJM93HJ8ND;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		G100000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = MJM93HJ8ND;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		G100000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 26506;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL = "http://localhost:8000";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_LOCAL = "http://localhost:8000";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_PRODUCTION = "https://api.vortex.mcguire.technology";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_STAGING = "https://api.staging.vortex.mcguire.technology";
+				INFOPLIST_KEY_FOUNDRY_API_VERSION = v1;
+				INFOPLIST_KEY_FOUNDRY_APP_ENV = local;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 26.5.6;
+				PRODUCT_BUNDLE_IDENTIFIER = technology.mcguire.vortex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		G100000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 26506;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL = "http://localhost:8000";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_LOCAL = "http://localhost:8000";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_PRODUCTION = "https://api.vortex.mcguire.technology";
+				INFOPLIST_KEY_FOUNDRY_API_BASE_URL_STAGING = "https://api.staging.vortex.mcguire.technology";
+				INFOPLIST_KEY_FOUNDRY_API_VERSION = v1;
+				INFOPLIST_KEY_FOUNDRY_APP_ENV = production;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 26.5.6;
+				PRODUCT_BUNDLE_IDENTIFIER = technology.mcguire.vortex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		H100000000000000000000001 /* Build configuration list for PBXProject "Vortex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				G100000000000000000000001 /* Debug */,
+				G100000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		H100000000000000000000002 /* Build configuration list for PBXNativeTarget "Vortex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				G100000000000000000000003 /* Debug */,
+				G100000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F100000000000000000000001 /* Project object */;
+}
+
+

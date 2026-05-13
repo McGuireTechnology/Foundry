@@ -4,11 +4,7 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "apps/docs/**"
-      - "package.json"
-      - "pnpm-lock.yaml"
-      - "pnpm-workspace.yaml"
-      - "tsconfig.base.json"
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
@@ -31,18 +27,16 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 20
-      - name: Enable Corepack
-        run: corepack enable
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci --prefix docs
       - name: Build docs
-        run: pnpm --filter @foundry/docs build
+        run: npm run build --prefix docs
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: apps/docs/docs/.vitepress/dist
+          path: docs/.vitepress/dist
 
   deploy:
     environment:

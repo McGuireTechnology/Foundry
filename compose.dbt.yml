@@ -1,0 +1,42 @@
+services:
+  dbt-runner:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
+    restart: "no"
+    working_dir: /usr/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - DBT_PROFILES_DIR=/usr/app/profiles
+      - DBT_TARGET=${DBT_TARGET:-dev}
+      - DBT_POSTGRES_HOST=postgres
+      - DBT_POSTGRES_PORT=5432
+      - DBT_POSTGRES_DB=${POSTGRES_DB:-vortex}
+      - DBT_POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - DBT_POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DBT_POSTGRES_SCHEMA=${DBT_POSTGRES_SCHEMA:-analytics}
+    volumes:
+      - ./dbt:/usr/app
+    command: run
+
+  dbt-docs:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
+    restart: "no"
+    working_dir: /usr/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - DBT_PROFILES_DIR=/usr/app/profiles
+      - DBT_TARGET=${DBT_TARGET:-dev}
+      - DBT_POSTGRES_HOST=postgres
+      - DBT_POSTGRES_PORT=5432
+      - DBT_POSTGRES_DB=${POSTGRES_DB:-vortex}
+      - DBT_POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - DBT_POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DBT_POSTGRES_SCHEMA=${DBT_POSTGRES_SCHEMA:-analytics}
+    volumes:
+      - ./dbt:/usr/app
+    ports:
+      - "8082:8080"
+    command: docs serve --host 0.0.0.0 --port 8080

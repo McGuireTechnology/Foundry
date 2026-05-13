@@ -1,0 +1,44 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: api/api.Dockerfile
+    restart: "no"
+    working_dir: /workspace/api
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-vortex}
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; req=urllib.request.Request('http://127.0.0.1:8000/health', headers={'X-API-Version':'v1'}); urllib.request.urlopen(req, timeout=5)\"",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    ports:
+      - "8000:8000"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.vortex-api.rule=Host(`api.localhost`)
+      - traefik.http.routers.vortex-api.entrypoints=http
+      - traefik.http.services.vortex-api.loadbalancer.server.port=8000
+    develop:
+      watch:
+        - action: sync
+          path: ./api/app
+          target: /workspace/api/app
+        - action: sync
+          path: ./api/tests
+          target: /workspace/api/tests
+        - action: rebuild
+          path: ./api/pyproject.toml
+        - action: rebuild
+          path: ./api/package.json

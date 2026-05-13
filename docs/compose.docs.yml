@@ -1,0 +1,25 @@
+services:
+  docs:
+    build:
+      context: ..
+      dockerfile: docs/docs.Dockerfile
+    restart: "no"
+    working_dir: /workspace
+    command: npm run dev --prefix docs -- --host 0.0.0.0
+    ports:
+      - "5174:5174"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.vortex-docs.rule=Host(`docs.localhost`)
+      - traefik.http.routers.vortex-docs.entrypoints=http
+      - traefik.http.services.vortex-docs.loadbalancer.server.port=5174
+      - traefik.http.routers.vortex-docs.priority=20
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./docs
+          target: /workspace/docs
+        - action: rebuild
+          path: ./docs/package.json
+        - action: rebuild
+          path: ./docs/package-lock.json
