@@ -15,7 +15,8 @@ coverage
 .vscode
 .idea
 *.egg-info
-apps/docs/docs/.vitepress/cache
+docs/.vitepress/cache
+docs/.vitepress/dist
 DerivedData
 *.xcodeproj/xcuserdata
 *.xcworkspace/xcuserdata
