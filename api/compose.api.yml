@@ -6,7 +6,7 @@ services:
     restart: "no"
     working_dir: /workspace/api
     env_file:
-      - .env
+      - .env.compose
     environment:
       - DATABASE_URL=postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-vortex}
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

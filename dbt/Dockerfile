@@ -1,0 +1,2 @@
+ARG DBT_POSTGRES_VERSION=1.8.2
+FROM ghcr.io/dbt-labs/dbt-postgres:${DBT_POSTGRES_VERSION}

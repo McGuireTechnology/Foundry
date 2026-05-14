@@ -1,0 +1,124 @@
+services:
+  superset-init:
+    build:
+      context: ..
+      dockerfile: superset/Dockerfile
+    image: vortex-superset
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:-thisISaSECRET_ChangeMe}
+      - DATABASE_DIALECT=postgresql
+      - DATABASE_USER=${POSTGRES_USER:-postgres}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_DB=superset
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - SUPERSET_CELERY_BROKER_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+      - SUPERSET_CELERY_RESULT_BACKEND=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+    volumes:
+      - superset:/app/superset_home
+    command: >
+      /bin/sh -c "
+      superset db upgrade &&
+      superset fab create-admin
+      --username ${SUPERSET_ADMIN_USERNAME:-admin}
+      --firstname Vortex
+      --lastname Admin
+      --email ${SUPERSET_ADMIN_EMAIL:-admin@example.com}
+      --password ${SUPERSET_ADMIN_PASSWORD:-admin}
+      || true &&
+      superset init
+      "
+
+  superset:
+    build:
+      context: ..
+      dockerfile: superset/Dockerfile
+    image: vortex-superset
+    restart: unless-stopped
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+    environment:
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:-thisISaSECRET_ChangeMe}
+      - DATABASE_DIALECT=postgresql
+      - DATABASE_USER=${POSTGRES_USER:-postgres}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_DB=superset
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - SUPERSET_CELERY_BROKER_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+      - SUPERSET_CELERY_RESULT_BACKEND=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+    volumes:
+      - superset:/app/superset_home
+    ports:
+      - "8088:8088"
+    command: /bin/sh -c "superset run -h 0.0.0.0 -p 8088"
+
+  superset-worker:
+    build:
+      context: ..
+      dockerfile: superset/Dockerfile
+    image: vortex-superset
+    restart: unless-stopped
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+    environment:
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:-thisISaSECRET_ChangeMe}
+      - DATABASE_DIALECT=postgresql
+      - DATABASE_USER=${POSTGRES_USER:-postgres}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_DB=superset
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - SUPERSET_CELERY_BROKER_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+      - SUPERSET_CELERY_RESULT_BACKEND=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+    volumes:
+      - superset:/app/superset_home
+    command: /bin/sh -c "celery --app=superset.tasks.celery_app:app worker -Ofair -l INFO"
+
+  superset-beat:
+    build:
+      context: ..
+      dockerfile: superset/Dockerfile
+    image: vortex-superset
+    restart: unless-stopped
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+    environment:
+      - SUPERSET_SECRET_KEY=${SUPERSET_SECRET_KEY:-thisISaSECRET_ChangeMe}
+      - DATABASE_DIALECT=postgresql
+      - DATABASE_USER=${POSTGRES_USER:-postgres}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_DB=superset
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - SUPERSET_CELERY_BROKER_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+      - SUPERSET_CELERY_RESULT_BACKEND=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${SUPERSET_REDIS_DB:-1}
+    volumes:
+      - superset:/app/superset_home
+    command: /bin/sh -c "celery --app=superset.tasks.celery_app:app beat -l INFO"
+
+volumes:
+  superset:

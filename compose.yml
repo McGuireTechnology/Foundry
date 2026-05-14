@@ -1,1 +1,23 @@
 name: vortex
+
+include:
+  - postgres/compose.yml
+  - pgbouncer/compose.yml
+  - redis/compose.yml
+  - fastapi/compose.yml
+  - vue/compose.yml
+  - airflow/compose.yml
+  - superset/compose.yml
+  - dbt/compose.yml
+  - pgadmin/compose.yml
+  - traefik/compose.yml
+  - prometheus/compose.yml
+  - postgres-exporter/compose.yml
+  - grafana/compose.yml
+  - loki/compose.yml
+  - promtail/compose.yml
+  - alertmanager/compose.yml
+  - flower/compose.yml
+  - minio/compose.yml
+  - otel/compose.yml
+  - tempo/compose.yml

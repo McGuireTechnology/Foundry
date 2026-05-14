@@ -1,0 +1,57 @@
+services:
+  fastapi:
+    image: vortex-fastapi
+    build:
+      context: ..
+      dockerfile: fastapi/Dockerfile
+    restart: unless-stopped
+    working_dir: /workspace/fastapi
+    env_file:
+      - ../.env.compose
+    environment:
+      - DATABASE_URL=postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@${PGBOUNCER_HOST:-pgbouncer}:${PGBOUNCER_INTERNAL_PORT:-5432}/${POSTGRES_DB:-vortex}
+      - REDIS_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${REDIS_DB:-0}
+      - ENV=${FASTAPI_ENV:-dev}
+      - BACKEND_CORS_ORIGINS=${FASTAPI_BACKEND_CORS_ORIGINS:-http://localhost:5173,http://localhost:8000,http://localhost}
+      - SECRET_KEY=${FASTAPI_SECRET_KEY:-change-me}
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      postgres:
+        condition: service_healthy
+      pgbouncer:
+        condition: service_started
+      redis:
+        condition: service_started
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; req=urllib.request.Request('http://127.0.0.1:8000/health', headers={'X-API-Version':'v1'}); urllib.request.urlopen(req, timeout=5)\"",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    ports:
+      - "8000:8000"
+
+  fastapi-worker:
+    image: vortex-fastapi
+    restart: unless-stopped
+    working_dir: /workspace/fastapi
+    env_file:
+      - ../.env.compose
+    environment:
+      - DATABASE_URL=postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@${PGBOUNCER_HOST:-pgbouncer}:${PGBOUNCER_INTERNAL_PORT:-5432}/${POSTGRES_DB:-vortex}
+      - REDIS_URL=redis://${REDIS_HOST:-redis}:${REDIS_PORT:-6379}/${REDIS_DB:-0}
+      - ENV=${FASTAPI_ENV:-dev}
+      - BACKEND_CORS_ORIGINS=${FASTAPI_BACKEND_CORS_ORIGINS:-http://localhost:5173,http://localhost:8000,http://localhost}
+      - SECRET_KEY=${FASTAPI_SECRET_KEY:-change-me}
+    command: python -m app.worker
+    depends_on:
+      postgres:
+        condition: service_healthy
+      pgbouncer:
+        condition: service_started
+      redis:
+        condition: service_started

@@ -1,0 +1,14 @@
+services:
+  otel-collector:
+    profiles: ["otel-collector"]
+    image: otel/opentelemetry-collector-contrib:0.122.1
+    restart: unless-stopped
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    volumes:
+      - ./otel/otel-collector-config.yml:/etc/otelcol-contrib/config.yaml:ro
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "8889:8889"
+    depends_on:
+      - tempo

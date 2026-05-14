@@ -1,0 +1,11 @@
+services:
+  vue-nginx:
+    build:
+      context: ..
+      dockerfile: vue/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      fastapi:
+        condition: service_started
+    ports:
+      - "5173:80"

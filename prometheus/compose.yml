@@ -1,0 +1,15 @@
+services:
+  prometheus:
+    profiles: ["prometheus"]
+    image: vortex-prometheus
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROMETHEUS_VERSION: ${PROMETHEUS_VERSION:-v2.55.1}
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./rules:/etc/prometheus/rules:ro
+    ports:
+      - "9090:9090"

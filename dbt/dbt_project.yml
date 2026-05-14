@@ -1,0 +1,11 @@
+name: vortex
+version: '1.0.0'
+config-version: 2
+
+profile: vortex
+
+model-paths: ["models"]
+
+models:
+  vortex:
+    +materialized: view

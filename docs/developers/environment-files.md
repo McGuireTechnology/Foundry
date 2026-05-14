@@ -2,13 +2,12 @@
 
 ## Application
 
-- `.env`: local runtime values
+- `.env.compose`: local compose/service values
 - `.env.example`: template to commit
 
 ## Compose
 
-- `.env.compose`: optional compose overrides
-- `.env.compose.example`: template to commit
+- `.env.compose.example`: compose/service template to commit
 
 ## pgAdmin
 

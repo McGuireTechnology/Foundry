@@ -11,7 +11,7 @@ This page defines the minimum local toolchain for consistent development.
 ## Setup Expectations
 
 - Install required runtimes before first run.
-- Use `.env.example` values as the starting point for local `.env`.
+- Use `.env.compose.example` values as the starting point for local `.env.compose`.
 - Keep local tooling aligned with CI where possible.
 
 ## Bootstrap

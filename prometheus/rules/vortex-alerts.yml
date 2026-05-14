@@ -1,0 +1,22 @@
+groups:
+  - name: vortex-core
+    rules:
+      - alert: FastApiDown
+        expr: up{job="fastapi"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          service: fastapi
+        annotations:
+          summary: "FastAPI target is down"
+          description: "Prometheus has not been able to scrape fastapi:8000 for 2 minutes."
+
+      - alert: PostgresExporterDown
+        expr: up{job="postgres-exporter"} == 0
+        for: 2m
+        labels:
+          severity: warning
+          service: postgres-exporter
+        annotations:
+          summary: "Postgres exporter is down"
+          description: "Prometheus has not been able to scrape postgres-exporter:9187 for 2 minutes."

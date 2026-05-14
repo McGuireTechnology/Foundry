@@ -1,0 +1,17 @@
+services:
+  postgres-exporter:
+    profiles: ["postgres-exporter"]
+    image: vortex-postgres-exporter
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        POSTGRES_EXPORTER_VERSION: ${POSTGRES_EXPORTER_VERSION:-v0.16.0}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - DATA_SOURCE_NAME=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@${POSTGRES_HOST:-postgres}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-vortex}?sslmode=disable
+    ports:
+      - "9187:9187"

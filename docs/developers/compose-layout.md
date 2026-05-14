@@ -7,6 +7,8 @@
 ## Service Files
 
 - `compose.postgres.yml`: Postgres service and persistent volume
+- `compose.redis.yml`: Redis service and persistent volume
+- `pgbouncer/compose.ym`: PgBouncer service for Postgres connection pooling
 - `compose.pgadmin.yml`: pgAdmin service
 - `api/compose.api.yml`: API service with healthcheck and watch config
 - `web/compose.web.yml`: Web service with watch config

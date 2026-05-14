@@ -1,0 +1,1622 @@
+[0m18:22:53.139090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e884718450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e884718310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e88491be90>]}
+
+
+============================== 18:22:53.185184 | ce8c9b16-8ddb-4f33-a469-2a2a910e431c ==============================
+[0m18:22:53.185184 [info ] [MainThread]: Running with dbt=1.8.3
+[0m18:22:53.198754 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:22:53.285761 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Compilation Error
+    Could not render {{ env_var(''DBT_POSTGRES_HOST'', ''postgres'') }}: expected token ',', got 'DBT_POSTGRES_HOST'
+      line 1
+        {{ env_var(''DBT_POSTGRES_HOST'', ''postgres'') }}
+[0m18:22:53.301480 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.5922794, "process_user_time": 6.827095, "process_kernel_time": 2.12211, "process_mem_max_rss": "93096", "process_out_blocks": "1128", "command_success": false, "process_in_blocks": "0"}
+[0m18:22:53.304013 [debug] [MainThread]: Command `dbt run` failed at 18:22:53.303668 after 0.60 seconds
+[0m18:22:53.311649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e884720310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e884778dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e88476a410>]}
+[0m18:22:53.317266 [debug] [MainThread]: Flushing usage events
+[0m18:23:34.786950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8d01310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8d48710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8d49290>]}
+
+
+============================== 18:23:34.820144 | 8039383f-0deb-4d3d-adcd-29bfbc990761 ==============================
+[0m18:23:34.820144 [info ] [MainThread]: Running with dbt=1.8.3
+[0m18:23:34.825866 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/app/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:23:35.960066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8c31d90>]}
+[0m18:23:36.159636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50ba8fd610>]}
+[0m18:23:36.169860 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m18:23:36.226393 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m18:23:36.352583 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:23:36.358932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8d24ed0>]}
+[0m18:23:40.369914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b72c1c90>]}
+[0m18:23:41.568835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b60ee810>]}
+[0m18:23:41.603995 [info ] [MainThread]: Found 1 model, 415 macros
+[0m18:23:41.657420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b7453290>]}
+[0m18:23:41.679606 [info ] [MainThread]: 
+[0m18:23:41.743094 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:23:41.764413 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m18:23:42.342954 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m18:23:42.407991 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:23:42.447151 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:23:42.519325 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.0 seconds
+[0m18:23:42.588197 [debug] [ThreadPool]: On list_vortex: Close
+[0m18:23:42.654109 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_vortex, now create_vortex_analytics)
+[0m18:23:42.747303 [debug] [ThreadPool]: Creating schema "database: "vortex"
+schema: "analytics"
+"
+[0m18:23:42.770000 [debug] [ThreadPool]: Using postgres connection "create_vortex_analytics"
+[0m18:23:42.805337 [debug] [ThreadPool]: On create_vortex_analytics: BEGIN
+[0m18:23:42.846171 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:23:42.965320 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:42.972964 [debug] [ThreadPool]: Using postgres connection "create_vortex_analytics"
+[0m18:23:43.001371 [debug] [ThreadPool]: On create_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "create_vortex_analytics"} */
+create schema if not exists "analytics"
+[0m18:23:43.037240 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.0 seconds
+[0m18:23:43.056130 [debug] [ThreadPool]: On create_vortex_analytics: COMMIT
+[0m18:23:43.075973 [debug] [ThreadPool]: Using postgres connection "create_vortex_analytics"
+[0m18:23:43.088002 [debug] [ThreadPool]: On create_vortex_analytics: COMMIT
+[0m18:23:43.156843 [debug] [ThreadPool]: SQL status: COMMIT in 0.0 seconds
+[0m18:23:43.166949 [debug] [ThreadPool]: On create_vortex_analytics: Close
+[0m18:23:43.232968 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex_analytics'
+[0m18:23:43.266694 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m18:23:43.286990 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m18:23:43.292240 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:23:43.369779 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:43.373207 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m18:23:43.382954 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m18:23:43.539055 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.0 seconds
+[0m18:23:43.542684 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m18:23:43.564718 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m18:23:43.582481 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:43.615028 [debug] [MainThread]: On master: BEGIN
+[0m18:23:43.659182 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:23:43.774012 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:43.787987 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:43.822460 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m18:23:43.931260 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m18:23:44.152430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b73b5fd0>]}
+[0m18:23:44.182833 [debug] [MainThread]: On master: ROLLBACK
+[0m18:23:44.214949 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:44.273798 [debug] [MainThread]: On master: BEGIN
+[0m18:23:44.305358 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:44.340359 [debug] [MainThread]: On master: COMMIT
+[0m18:23:44.386275 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:44.545728 [debug] [MainThread]: On master: COMMIT
+[0m18:23:44.584143 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m18:23:44.628649 [debug] [MainThread]: On master: Close
+[0m18:23:44.690240 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:23:44.834785 [info ] [MainThread]: 
+[0m18:23:45.199495 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m18:23:45.256454 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m18:23:45.269314 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m18:23:45.286139 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m18:23:45.316868 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m18:23:45.925819 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m18:23:46.131224 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m18:23:46.317453 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m18:23:46.322039 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m18:23:46.331437 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:23:46.356383 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:46.448760 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m18:23:46.450652 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    select 1 as id
+  );
+[0m18:23:46.699121 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m18:23:46.716222 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m18:23:46.738047 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m18:23:46.760275 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m18:23:46.818271 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m18:23:46.839557 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m18:23:46.879371 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m18:23:46.910569 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m18:23:46.961303 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m18:23:47.009508 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m18:23:47.023493 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m18:23:47.058217 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m18:23:47.084610 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m18:23:47.111329 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8039383f-0deb-4d3d-adcd-29bfbc990761', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8c1e090>]}
+[0m18:23:47.142182 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 1.84s]
+[0m18:23:47.190397 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m18:23:47.258914 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:47.305197 [debug] [MainThread]: On master: BEGIN
+[0m18:23:47.343735 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:23:47.440385 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m18:23:47.480924 [debug] [MainThread]: On master: COMMIT
+[0m18:23:47.553460 [debug] [MainThread]: Using postgres connection "master"
+[0m18:23:47.565301 [debug] [MainThread]: On master: COMMIT
+[0m18:23:47.622243 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m18:23:47.670632 [debug] [MainThread]: On master: Close
+[0m18:23:47.746943 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:23:47.786978 [debug] [MainThread]: Connection 'create_vortex_analytics' was properly closed.
+[0m18:23:47.920774 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m18:23:47.936641 [info ] [MainThread]: 
+[0m18:23:47.975700 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 6.19 seconds (6.19s).
+[0m18:23:47.988664 [debug] [MainThread]: Command end result
+[0m18:23:48.622792 [info ] [MainThread]: 
+[0m18:23:48.639701 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:23:48.675801 [info ] [MainThread]: 
+[0m18:23:48.702496 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:23:48.726867 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.48923, "process_user_time": 9.245626, "process_kernel_time": 1.525528, "process_mem_max_rss": "113428", "process_in_blocks": "104", "process_out_blocks": "1272"}
+[0m18:23:48.786583 [debug] [MainThread]: Command `dbt run` succeeded at 18:23:48.786232 after 14.55 seconds
+[0m18:23:48.808611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50baa77950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50b8d333d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d50bcaec810>]}
+[0m18:23:48.857354 [debug] [MainThread]: Flushing usage events
+[0m19:09:21.476855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2ceea90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca4150310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2cec650>]}
+
+
+============================== 19:09:21.537398 | 4fd310fc-e29f-4e43-bf26-fe1548e699e7 ==============================
+[0m19:09:21.537398 [info ] [MainThread]: Running with dbt=1.8.3
+[0m19:09:21.563948 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/usr/app/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m19:09:23.784204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2cec290>]}
+[0m19:09:24.084629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca49011d0>]}
+[0m19:09:24.099707 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m19:09:24.195776 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m19:09:24.972870 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m19:09:24.994010 [debug] [MainThread]: Partial parsing: updated file: vortex://models/example.sql
+[0m19:09:25.907589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2b79790>]}
+[0m19:09:26.701616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca1154090>]}
+[0m19:09:26.710938 [info ] [MainThread]: Found 1 model, 415 macros
+[0m19:09:26.715481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca1400410>]}
+[0m19:09:26.746179 [info ] [MainThread]: 
+[0m19:09:26.796808 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:09:26.816095 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m19:09:27.631577 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m19:09:27.638271 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:09:27.640925 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:09:27.761436 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m19:09:27.772000 [debug] [ThreadPool]: On list_vortex: Close
+[0m19:09:27.813289 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex_analytics'
+[0m19:09:27.879455 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:09:27.881365 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m19:09:27.886830 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:09:27.928731 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m19:09:27.953220 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:09:27.971243 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:09:28.099724 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.0 seconds
+[0m19:09:28.104681 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m19:09:28.124808 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m19:09:28.166454 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:28.193268 [debug] [MainThread]: On master: BEGIN
+[0m19:09:28.216228 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:09:28.413539 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:09:28.423168 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:28.450752 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:09:28.792148 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m19:09:28.809704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca1273e90>]}
+[0m19:09:28.823888 [debug] [MainThread]: On master: ROLLBACK
+[0m19:09:28.855926 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:28.870847 [debug] [MainThread]: On master: BEGIN
+[0m19:09:28.884317 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:09:28.896188 [debug] [MainThread]: On master: COMMIT
+[0m19:09:28.912145 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:28.919320 [debug] [MainThread]: On master: COMMIT
+[0m19:09:28.921685 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:09:28.923821 [debug] [MainThread]: On master: Close
+[0m19:09:28.928708 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:09:28.934557 [info ] [MainThread]: 
+[0m19:09:29.014391 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m19:09:29.024629 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m19:09:29.032723 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m19:09:29.047108 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m19:09:29.067077 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m19:09:29.125153 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m19:09:29.326115 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m19:09:29.483447 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:09:29.498805 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m19:09:29.513683 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:09:29.534706 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m19:09:29.578427 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:09:29.593310 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m19:09:29.618222 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "analytics.example_events_raw" does not exist
+LINE 16:     from analytics.example_events_raw
+                  ^
+
+[0m19:09:29.629658 [debug] [Thread-1 (]: On model.vortex.example: ROLLBACK
+[0m19:09:29.640121 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m19:09:29.795997 [debug] [Thread-1 (]: Database Error in model example (models/example.sql)
+  relation "analytics.example_events_raw" does not exist
+  LINE 16:     from analytics.example_events_raw
+                    ^
+  compiled Code at target/run/vortex/models/example.sql
+[0m19:09:29.806821 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4fd310fc-e29f-4e43-bf26-fe1548e699e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0c8338a510>]}
+[0m19:09:29.811278 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model analytics.example ......................... [[31mERROR[0m in 0.77s]
+[0m19:09:29.816094 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m19:09:29.825226 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:29.832284 [debug] [MainThread]: On master: BEGIN
+[0m19:09:29.843181 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:09:29.865902 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:09:29.881266 [debug] [MainThread]: On master: COMMIT
+[0m19:09:29.892659 [debug] [MainThread]: Using postgres connection "master"
+[0m19:09:29.907781 [debug] [MainThread]: On master: COMMIT
+[0m19:09:29.915333 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:09:29.919289 [debug] [MainThread]: On master: Close
+[0m19:09:29.921373 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:09:29.923245 [debug] [MainThread]: Connection 'list_vortex' was properly closed.
+[0m19:09:29.925930 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m19:09:29.930736 [info ] [MainThread]: 
+[0m19:09:29.948550 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.13 seconds (3.13s).
+[0m19:09:29.967830 [debug] [MainThread]: Command end result
+[0m19:09:30.366830 [info ] [MainThread]: 
+[0m19:09:30.369395 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m19:09:30.380354 [info ] [MainThread]: 
+[0m19:09:30.386592 [error] [MainThread]:   Database Error in model example (models/example.sql)
+  relation "analytics.example_events_raw" does not exist
+  LINE 16:     from analytics.example_events_raw
+                    ^
+  compiled Code at target/run/vortex/models/example.sql
+[0m19:09:30.403742 [info ] [MainThread]: 
+[0m19:09:30.409371 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m19:09:30.431377 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 9.487219, "process_user_time": 7.912904, "process_kernel_time": 2.956525, "process_mem_max_rss": "115296", "process_in_blocks": "224", "process_out_blocks": "1272", "command_success": false}
+[0m19:09:30.450906 [debug] [MainThread]: Command `dbt run` failed at 19:09:30.450583 after 9.51 seconds
+[0m19:09:30.460242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2d49390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2cf4510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b0ca2ce3f50>]}
+[0m19:09:30.472519 [debug] [MainThread]: Flushing usage events
+[0m19:11:16.658365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d55bb2110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d55bb2990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d55bb1a10>]}
+
+
+============================== 19:11:16.699586 | 43e231ff-c07d-418b-ac56-b6d30a8ae6c6 ==============================
+[0m19:11:16.699586 [info ] [MainThread]: Running with dbt=1.8.3
+[0m19:11:16.733517 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/usr/app/logs', 'debug': 'False', 'profiles_dir': '/usr/app/profiles', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m19:11:18.403815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d55b60090>]}
+[0m19:11:18.752749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d57760050>]}
+[0m19:11:18.775574 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m19:11:18.833820 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m19:11:19.632188 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:11:19.634262 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:11:19.706253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d5428a550>]}
+[0m19:11:20.233630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d57053650>]}
+[0m19:11:20.251093 [info ] [MainThread]: Found 1 model, 415 macros
+[0m19:11:20.272408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d54130350>]}
+[0m19:11:20.300886 [info ] [MainThread]: 
+[0m19:11:20.311444 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:11:20.321924 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m19:11:20.619913 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m19:11:20.663770 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:11:20.682786 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:11:20.762585 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m19:11:20.782595 [debug] [ThreadPool]: On list_vortex: Close
+[0m19:11:20.814727 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_vortex, now list_vortex_analytics)
+[0m19:11:20.849772 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:11:20.860583 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m19:11:20.865306 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:11:20.877939 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m19:11:20.879840 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:11:20.881304 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:11:20.888214 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m19:11:20.893861 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m19:11:20.896503 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m19:11:20.906495 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:20.917367 [debug] [MainThread]: On master: BEGIN
+[0m19:11:20.919556 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:11:20.936105 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:11:20.939982 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:20.942172 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:11:20.951798 [debug] [MainThread]: SQL status: SELECT 0 in 0.0 seconds
+[0m19:11:20.955847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d5423a610>]}
+[0m19:11:20.957783 [debug] [MainThread]: On master: ROLLBACK
+[0m19:11:20.959882 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:20.961502 [debug] [MainThread]: On master: BEGIN
+[0m19:11:20.963919 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:11:20.965790 [debug] [MainThread]: On master: COMMIT
+[0m19:11:20.967419 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:20.969018 [debug] [MainThread]: On master: COMMIT
+[0m19:11:20.972476 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:11:20.974963 [debug] [MainThread]: On master: Close
+[0m19:11:20.977115 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:11:20.983021 [info ] [MainThread]: 
+[0m19:11:21.028255 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m19:11:21.041171 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m19:11:21.044175 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m19:11:21.045891 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m19:11:21.088541 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m19:11:21.304596 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m19:11:21.413597 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m19:11:21.480309 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.487782 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m19:11:21.497490 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:11:21.521347 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m19:11:21.526082 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.535632 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m19:11:21.569917 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m19:11:21.594050 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.628261 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example" rename to "example__dbt_backup"
+[0m19:11:21.634579 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:11:21.654544 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.657145 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m19:11:21.660996 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:11:21.753464 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:11:21.760944 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.769444 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:11:21.784504 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m19:11:21.824230 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m19:11:21.854416 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:11:21.860595 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m19:11:21.914318 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m19:11:21.923170 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m19:11:21.931204 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '43e231ff-c07d-418b-ac56-b6d30a8ae6c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d5683f810>]}
+[0m19:11:21.952728 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 0.89s]
+[0m19:11:21.965279 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m19:11:21.983907 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:22.000607 [debug] [MainThread]: On master: BEGIN
+[0m19:11:22.006693 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:11:22.044310 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:11:22.114876 [debug] [MainThread]: On master: COMMIT
+[0m19:11:22.128946 [debug] [MainThread]: Using postgres connection "master"
+[0m19:11:22.169314 [debug] [MainThread]: On master: COMMIT
+[0m19:11:22.185948 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:11:22.201776 [debug] [MainThread]: On master: Close
+[0m19:11:22.208919 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:11:22.214991 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m19:11:22.220838 [info ] [MainThread]: 
+[0m19:11:22.235002 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.91 seconds (1.91s).
+[0m19:11:22.248023 [debug] [MainThread]: Command end result
+[0m19:11:23.078069 [info ] [MainThread]: 
+[0m19:11:23.081748 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:11:23.083628 [info ] [MainThread]: 
+[0m19:11:23.087986 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:11:23.092985 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.0424056, "process_user_time": 8.285649, "process_kernel_time": 3.693603, "process_mem_max_rss": "111652", "process_in_blocks": "632", "process_out_blocks": "1272"}
+[0m19:11:23.095130 [debug] [MainThread]: Command `dbt run` succeeded at 19:11:23.094845 after 7.04 seconds
+[0m19:11:23.096888 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d5997c750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d59ad8350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d9d59ad8c90>]}
+[0m19:11:23.099098 [debug] [MainThread]: Flushing usage events
+[0m19:26:58.793009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e8850fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e8bdbdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e8852150>]}
+[0m19:26:58.740801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34833b0510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3485900a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d348409d290>]}
+
+
+============================== 19:26:58.944643 | b279a08b-8e82-4a1e-9611-399130f2afc9 ==============================
+[0m19:26:58.944643 [info ] [MainThread]: Running with dbt=1.8.3
+[0m19:26:58.947331 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt docs serve --host 0.0.0.0 --port 8080', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+
+
+============================== 19:26:58.967990 | 8441302a-8f83-4520-a4a9-8e4a1c28adca ==============================
+[0m19:26:58.967990 [info ] [MainThread]: Running with dbt=1.8.3
+[0m19:26:58.970636 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/usr/app/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m19:27:01.716900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d348331eb50>]}
+[0m19:27:01.719953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b279a08b-8e82-4a1e-9611-399130f2afc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388e8739e50>]}
+[0m19:27:01.956741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3484fd9210>]}
+[0m19:27:01.967184 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m19:27:02.064729 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m19:27:02.164492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b279a08b-8e82-4a1e-9611-399130f2afc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7388ea401a10>]}
+[0m19:27:03.215207 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:27:03.223715 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:27:03.317272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3481a124d0>]}
+[0m19:27:04.402253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3481949c10>]}
+[0m19:27:04.435938 [info ] [MainThread]: Found 1 model, 415 macros
+[0m19:27:04.467347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3481999290>]}
+[0m19:27:04.539440 [info ] [MainThread]: 
+[0m19:27:04.571466 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:27:04.630304 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m19:27:05.718868 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m19:27:05.737290 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:27:05.748735 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:27:06.295683 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.0 seconds
+[0m19:27:06.358049 [debug] [ThreadPool]: On list_vortex: Close
+[0m19:27:06.372409 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_vortex, now list_vortex_analytics)
+[0m19:27:06.519578 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:27:06.522599 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m19:27:06.524254 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:27:06.567277 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m19:27:06.607752 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:27:06.688491 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:27:06.852388 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m19:27:06.879955 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m19:27:06.958507 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m19:27:07.011195 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:07.112794 [debug] [MainThread]: On master: BEGIN
+[0m19:27:07.160968 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:27:07.225561 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:27:07.307782 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:07.311843 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:27:07.787147 [debug] [MainThread]: SQL status: SELECT 1 in 0.0 seconds
+[0m19:27:07.826474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3481b61a90>]}
+[0m19:27:07.943314 [debug] [MainThread]: On master: ROLLBACK
+[0m19:27:08.025092 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:08.035313 [debug] [MainThread]: On master: BEGIN
+[0m19:27:08.085476 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:27:08.324790 [debug] [MainThread]: On master: COMMIT
+[0m19:27:08.365726 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:08.538692 [debug] [MainThread]: On master: COMMIT
+[0m19:27:08.553533 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:27:08.598589 [debug] [MainThread]: On master: Close
+[0m19:27:08.747515 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:27:08.817991 [info ] [MainThread]: 
+[0m19:27:08.982851 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m19:27:09.032969 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m19:27:09.087719 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m19:27:09.107833 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m19:27:09.183105 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m19:27:09.251432 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m19:27:09.457433 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m19:27:09.733360 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:09.809045 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m19:27:09.873534 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:27:10.059894 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m19:27:10.155732 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:10.206899 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m19:27:11.043767 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.0 seconds
+[0m19:27:11.144671 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:11.173113 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example" rename to "example__dbt_backup"
+[0m19:27:11.332696 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:27:11.468919 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:11.539950 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m19:27:11.718369 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:27:11.954611 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:27:12.254191 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:12.348531 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:27:12.450793 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m19:27:12.503879 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m19:27:12.570104 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:27:12.649595 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m19:27:12.874672 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m19:27:12.944291 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m19:27:12.970355 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8441302a-8f83-4520-a4a9-8e4a1c28adca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3484083910>]}
+[0m19:27:13.017207 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 3.88s]
+[0m19:27:13.054703 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m19:27:13.140769 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:13.168582 [debug] [MainThread]: On master: BEGIN
+[0m19:27:13.225324 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:27:13.320803 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:27:13.345417 [debug] [MainThread]: On master: COMMIT
+[0m19:27:13.361483 [debug] [MainThread]: Using postgres connection "master"
+[0m19:27:13.371603 [debug] [MainThread]: On master: COMMIT
+[0m19:27:13.399711 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:27:13.475091 [debug] [MainThread]: On master: Close
+[0m19:27:13.477474 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:27:13.495507 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m19:27:13.560865 [info ] [MainThread]: 
+[0m19:27:13.592216 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 8.98 seconds (8.98s).
+[0m19:27:13.604571 [debug] [MainThread]: Command end result
+[0m19:27:15.224005 [info ] [MainThread]: 
+[0m19:27:15.255788 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:27:15.347487 [info ] [MainThread]: 
+[0m19:27:15.389929 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:27:15.405116 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 17.089808, "process_user_time": 11.775648, "process_kernel_time": 17.827675, "process_mem_max_rss": "111864", "process_in_blocks": "2856", "process_out_blocks": "1272"}
+[0m19:27:15.500445 [debug] [MainThread]: Command `dbt run` succeeded at 19:27:15.500117 after 17.19 seconds
+[0m19:27:15.628789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3483411fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34871fc7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3487358d90>]}
+[0m19:27:15.686954 [debug] [MainThread]: Flushing usage events
+[0m19:35:10.014044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826edc2290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826efb5f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826efb5b10>]}
+
+
+============================== 19:35:10.046079 | 29b4f2d0-bc91-499c-b3d7-5e78ef3131fc ==============================
+[0m19:35:10.046079 [info ] [MainThread]: Running with dbt=1.8.3
+[0m19:35:10.050851 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/usr/app/profiles', 'log_path': '/usr/app/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m19:35:10.732095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826ee8e250>]}
+[0m19:35:10.940282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x798270b4dd10>]}
+[0m19:35:10.943135 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m19:35:10.981204 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m19:35:11.430331 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:35:11.434255 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:35:11.518873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826d5d6690>]}
+[0m19:35:12.384055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826d565c90>]}
+[0m19:35:12.387129 [info ] [MainThread]: Found 1 model, 415 macros
+[0m19:35:12.389105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826d66e1d0>]}
+[0m19:35:12.393959 [info ] [MainThread]: 
+[0m19:35:12.397697 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:35:12.401408 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m19:35:12.600359 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m19:35:12.602458 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:35:12.604298 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:35:12.644639 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m19:35:12.649927 [debug] [ThreadPool]: On list_vortex: Close
+[0m19:35:12.658504 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex_analytics'
+[0m19:35:12.682507 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:35:12.684731 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m19:35:12.687350 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:35:12.705173 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m19:35:12.708742 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m19:35:12.711986 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:35:12.723215 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m19:35:12.727950 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m19:35:12.730415 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m19:35:12.756825 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:12.761411 [debug] [MainThread]: On master: BEGIN
+[0m19:35:12.763258 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:35:12.805768 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:35:12.816551 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:12.839554 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:35:12.858229 [debug] [MainThread]: SQL status: SELECT 1 in 0.0 seconds
+[0m19:35:12.863417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826c889010>]}
+[0m19:35:12.867606 [debug] [MainThread]: On master: ROLLBACK
+[0m19:35:12.875513 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:12.877542 [debug] [MainThread]: On master: BEGIN
+[0m19:35:12.884767 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:35:12.894049 [debug] [MainThread]: On master: COMMIT
+[0m19:35:12.901530 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:12.904081 [debug] [MainThread]: On master: COMMIT
+[0m19:35:12.906427 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:35:12.917163 [debug] [MainThread]: On master: Close
+[0m19:35:12.926665 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:35:12.931400 [info ] [MainThread]: 
+[0m19:35:13.000255 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m19:35:13.022295 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m19:35:13.029044 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m19:35:13.035326 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m19:35:13.084377 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m19:35:13.169789 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m19:35:13.307043 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m19:35:13.549612 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:13.562003 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m19:35:13.576234 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:35:13.602626 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m19:35:13.605732 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:13.611386 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m19:35:13.682017 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m19:35:13.721248 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:13.789409 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example" rename to "example__dbt_backup"
+[0m19:35:13.826845 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:35:13.835951 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:13.846612 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m19:35:13.861415 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m19:35:13.945748 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:35:13.991216 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:14.000193 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m19:35:14.050771 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m19:35:14.104387 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m19:35:14.138325 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m19:35:14.156145 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m19:35:14.186932 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m19:35:14.193308 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m19:35:14.209930 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '29b4f2d0-bc91-499c-b3d7-5e78ef3131fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79826ee64590>]}
+[0m19:35:14.227919 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 1.18s]
+[0m19:35:14.238478 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m19:35:14.251412 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:14.254048 [debug] [MainThread]: On master: BEGIN
+[0m19:35:14.256502 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:35:14.277760 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m19:35:14.306185 [debug] [MainThread]: On master: COMMIT
+[0m19:35:14.322750 [debug] [MainThread]: Using postgres connection "master"
+[0m19:35:14.328316 [debug] [MainThread]: On master: COMMIT
+[0m19:35:14.353443 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m19:35:14.356176 [debug] [MainThread]: On master: Close
+[0m19:35:14.359638 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:35:14.370354 [debug] [MainThread]: Connection 'list_vortex' was properly closed.
+[0m19:35:14.396495 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m19:35:14.416952 [info ] [MainThread]: 
+[0m19:35:14.456068 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.01 seconds (2.01s).
+[0m19:35:14.480463 [debug] [MainThread]: Command end result
+[0m19:35:15.161316 [info ] [MainThread]: 
+[0m19:35:15.168416 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:35:15.176671 [info ] [MainThread]: 
+[0m19:35:15.180493 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m19:35:15.187601 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.435801, "process_user_time": 7.311537, "process_kernel_time": 2.189024, "process_mem_max_rss": "111952", "process_out_blocks": "1272", "process_in_blocks": "0"}
+[0m19:35:15.192420 [debug] [MainThread]: Command `dbt run` succeeded at 19:35:15.192117 after 5.44 seconds
+[0m19:35:15.216092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x798272d38810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x798272ebc550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x798272ebcd50>]}
+[0m19:35:15.223960 [debug] [MainThread]: Flushing usage events
+[0m21:10:49.960724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787051351650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x787051351e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78705130d710>]}
+
+
+============================== 21:10:51.746742 | 617e0cb6-fe8c-4eed-a19f-cac7dde06ddb ==============================
+[0m21:10:51.746742 [info ] [MainThread]: Running with dbt=1.8.3
+[0m21:10:51.955172 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/usr/app/profiles', 'log_path': '/usr/app/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt docs serve --host 0.0.0.0 --port 8080', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:10:55.333137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbf026d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbf30ce50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbf003e50>]}
+
+
+============================== 21:10:55.379835 | e0eab37a-39a2-469b-bd75-c79dba23e24f ==============================
+[0m21:10:55.379835 [info ] [MainThread]: Running with dbt=1.8.3
+[0m21:10:55.403220 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/profiles', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/usr/app/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:10:58.250740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '617e0cb6-fe8c-4eed-a19f-cac7dde06ddb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78704fa04d90>]}
+[0m21:10:58.705114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '617e0cb6-fe8c-4eed-a19f-cac7dde06ddb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78705505d050>]}
+[0m21:10:59.143872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbf54bf10>]}
+[0m21:10:59.389906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdc2cc8890>]}
+[0m21:10:59.394728 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m21:10:59.686174 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m21:11:08.903393 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:11:08.922755 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:11:09.282372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbd618610>]}
+[0m21:11:10.673108 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdc04a1f10>]}
+[0m21:11:10.726807 [info ] [MainThread]: Found 1 model, 415 macros
+[0m21:11:10.782580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbef145d0>]}
+[0m21:11:10.814653 [info ] [MainThread]: 
+[0m21:11:10.836273 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m21:11:10.853863 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m21:11:12.868105 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m21:11:12.874831 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m21:11:12.883173 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:11:13.372490 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.0 seconds
+[0m21:11:13.378647 [debug] [ThreadPool]: On list_vortex: Close
+[0m21:11:13.387222 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex_analytics'
+[0m21:11:13.472881 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m21:11:13.495216 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m21:11:13.515386 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:11:13.592456 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m21:11:13.623729 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m21:11:13.661434 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m21:11:13.853606 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m21:11:13.868871 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m21:11:13.884593 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m21:11:13.955568 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:14.031116 [debug] [MainThread]: On master: BEGIN
+[0m21:11:14.146423 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:11:14.433862 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:11:14.494387 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:14.531763 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m21:11:16.980087 [debug] [MainThread]: SQL status: SELECT 1 in 2.0 seconds
+[0m21:11:17.030354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbefd08d0>]}
+[0m21:11:17.053597 [debug] [MainThread]: On master: ROLLBACK
+[0m21:11:17.091379 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:17.113004 [debug] [MainThread]: On master: BEGIN
+[0m21:11:17.157349 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:11:17.233899 [debug] [MainThread]: On master: COMMIT
+[0m21:11:17.290601 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:17.353040 [debug] [MainThread]: On master: COMMIT
+[0m21:11:17.434985 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m21:11:17.501846 [debug] [MainThread]: On master: Close
+[0m21:11:17.644310 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:11:17.650227 [info ] [MainThread]: 
+[0m21:11:17.740556 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m21:11:17.757103 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m21:11:17.787764 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m21:11:17.830660 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m21:11:17.880255 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m21:11:18.070570 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m21:11:18.317700 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m21:11:18.569334 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:18.571660 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m21:11:18.585113 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:11:18.655049 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m21:11:18.671306 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:18.678583 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m21:11:19.095313 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m21:11:19.163846 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:19.184534 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example" rename to "example__dbt_backup"
+[0m21:11:19.214802 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m21:11:19.232450 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:19.237999 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m21:11:19.249252 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m21:11:19.328153 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m21:11:19.330588 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:19.332445 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m21:11:19.431786 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m21:11:19.464794 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m21:11:19.509728 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:11:19.516883 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m21:11:19.693191 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m21:11:19.707502 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m21:11:19.721246 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e0eab37a-39a2-469b-bd75-c79dba23e24f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdbca3b550>]}
+[0m21:11:19.724533 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 1.93s]
+[0m21:11:19.735550 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m21:11:19.747121 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:19.758645 [debug] [MainThread]: On master: BEGIN
+[0m21:11:19.766247 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:11:19.788069 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:11:19.792302 [debug] [MainThread]: On master: COMMIT
+[0m21:11:19.797382 [debug] [MainThread]: Using postgres connection "master"
+[0m21:11:19.799340 [debug] [MainThread]: On master: COMMIT
+[0m21:11:19.802377 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m21:11:19.806944 [debug] [MainThread]: On master: Close
+[0m21:11:19.810895 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:11:19.837684 [debug] [MainThread]: Connection 'list_vortex' was properly closed.
+[0m21:11:19.844068 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m21:11:19.886638 [info ] [MainThread]: 
+[0m21:11:19.915703 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 9.02 seconds (9.02s).
+[0m21:11:19.929966 [debug] [MainThread]: Command end result
+[0m21:11:20.198095 [info ] [MainThread]: 
+[0m21:11:20.201162 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:11:20.203178 [info ] [MainThread]: 
+[0m21:11:20.206940 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:11:20.215424 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 28.927351, "process_user_time": 14.547764, "process_kernel_time": 35.44174, "process_mem_max_rss": "110568", "process_in_blocks": "1288", "process_out_blocks": "0"}
+[0m21:11:20.221077 [debug] [MainThread]: Command `dbt run` succeeded at 21:11:20.220703 after 28.93 seconds
+[0m21:11:20.227612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdc2dd4750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdc2f30350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76fdc2f30c90>]}
+[0m21:11:20.229915 [debug] [MainThread]: Flushing usage events
+[0m21:18:04.540187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cdd1c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47e1db290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cdd1f90>]}
+
+
+============================== 21:18:04.699985 | afa39233-62fa-45d7-894a-45561f8624d2 ==============================
+[0m21:18:04.699985 [info ] [MainThread]: Running with dbt=1.8.3
+[0m21:18:04.716739 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/usr/app/logs', 'debug': 'False', 'profiles_dir': '/usr/app/profiles', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:18:08.563619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cc09390>]}
+[0m21:18:08.819946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f480a84850>]}
+[0m21:18:08.873887 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m21:18:09.353001 [debug] [MainThread]: checksum: 871d77df38a0661255d31f261d53a40de07e4ab2030d521ff4a1932357e45ee6, vars: {}, profile: , target: dev, version: 1.8.3
+[0m21:18:12.464246 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:18:12.469109 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:18:12.621374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47b409710>]}
+[0m21:18:15.757587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cc9aa90>]}
+[0m21:18:15.760699 [info ] [MainThread]: Found 1 model, 415 macros
+[0m21:18:15.775433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cd7fad0>]}
+[0m21:18:15.787427 [info ] [MainThread]: 
+[0m21:18:15.790568 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m21:18:15.803781 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex'
+[0m21:18:18.829360 [debug] [ThreadPool]: Using postgres connection "list_vortex"
+[0m21:18:18.839940 [debug] [ThreadPool]: On list_vortex: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m21:18:18.879892 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:18:29.900806 [debug] [ThreadPool]: SQL status: SELECT 5 in 11.0 seconds
+[0m21:18:30.361583 [debug] [ThreadPool]: On list_vortex: Close
+[0m21:18:30.850861 [debug] [ThreadPool]: Acquiring new postgres connection 'list_vortex_analytics'
+[0m21:18:31.297296 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m21:18:31.366514 [debug] [ThreadPool]: On list_vortex_analytics: BEGIN
+[0m21:18:31.439117 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:18:31.910785 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m21:18:31.945718 [debug] [ThreadPool]: Using postgres connection "list_vortex_analytics"
+[0m21:18:32.019724 [debug] [ThreadPool]: On list_vortex_analytics: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "list_vortex_analytics"} */
+select
+      'vortex' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'vortex' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m21:18:32.272696 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.0 seconds
+[0m21:18:32.335257 [debug] [ThreadPool]: On list_vortex_analytics: ROLLBACK
+[0m21:18:32.382731 [debug] [ThreadPool]: On list_vortex_analytics: Close
+[0m21:18:32.457505 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:32.459931 [debug] [MainThread]: On master: BEGIN
+[0m21:18:32.484538 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:18:32.588505 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:18:32.621851 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:32.652834 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m21:18:33.467441 [debug] [MainThread]: SQL status: SELECT 1 in 1.0 seconds
+[0m21:18:33.490852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47b492cd0>]}
+[0m21:18:33.541135 [debug] [MainThread]: On master: ROLLBACK
+[0m21:18:33.584055 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:33.626616 [debug] [MainThread]: On master: BEGIN
+[0m21:18:33.666901 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:18:33.690775 [debug] [MainThread]: On master: COMMIT
+[0m21:18:33.724137 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:33.776572 [debug] [MainThread]: On master: COMMIT
+[0m21:18:33.872100 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m21:18:33.937093 [debug] [MainThread]: On master: Close
+[0m21:18:34.015378 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:18:34.099295 [info ] [MainThread]: 
+[0m21:18:34.996780 [debug] [Thread-1 (]: Began running node model.vortex.example
+[0m21:18:35.122772 [info ] [Thread-1 (]: 1 of 1 START sql view model analytics.example .................................. [RUN]
+[0m21:18:35.171547 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_vortex_analytics, now model.vortex.example)
+[0m21:18:35.327720 [debug] [Thread-1 (]: Began compiling node model.vortex.example
+[0m21:18:35.631161 [debug] [Thread-1 (]: Writing injected SQL for node "model.vortex.example"
+[0m21:18:36.524476 [debug] [Thread-1 (]: Began executing node model.vortex.example
+[0m21:18:38.708464 [debug] [Thread-1 (]: Writing runtime sql for node "model.vortex.example"
+[0m21:18:40.090081 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:40.111650 [debug] [Thread-1 (]: On model.vortex.example: BEGIN
+[0m21:18:40.173896 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:18:40.324087 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m21:18:40.374002 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:40.468556 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+
+  create view "vortex"."analytics"."example__dbt_tmp"
+    
+    
+  as (
+    with events as (
+    select
+        event_id,
+        event_type,
+        user_id,
+        value,
+        source,
+        api_version,
+        created_at::timestamptz as created_at
+    from analytics.example_events_raw
+),
+daily as (
+    select
+        date_trunc('day', created_at) as event_day,
+        event_type,
+        count(*) as event_count,
+        count(distinct user_id) as unique_users,
+        sum(value) as total_value
+    from events
+    group by 1, 2
+)
+select *
+from daily
+  );
+[0m21:18:41.355587 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.0 seconds
+[0m21:18:41.638929 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:41.731015 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example" rename to "example__dbt_backup"
+[0m21:18:42.363422 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 1.0 seconds
+[0m21:18:42.597491 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:42.675118 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+alter table "vortex"."analytics"."example__dbt_tmp" rename to "example"
+[0m21:18:42.804851 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m21:18:44.055509 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m21:18:44.349701 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:44.469111 [debug] [Thread-1 (]: On model.vortex.example: COMMIT
+[0m21:18:44.562389 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m21:18:44.819667 [debug] [Thread-1 (]: Applying DROP to: "vortex"."analytics"."example__dbt_backup"
+[0m21:18:45.029239 [debug] [Thread-1 (]: Using postgres connection "model.vortex.example"
+[0m21:18:45.095352 [debug] [Thread-1 (]: On model.vortex.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "vortex", "target_name": "dev", "node_id": "model.vortex.example"} */
+drop view if exists "vortex"."analytics"."example__dbt_backup" cascade
+[0m21:18:45.397784 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m21:18:45.416008 [debug] [Thread-1 (]: On model.vortex.example: Close
+[0m21:18:45.445309 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'afa39233-62fa-45d7-894a-45561f8624d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47b500390>]}
+[0m21:18:45.536890 [info ] [Thread-1 (]: 1 of 1 OK created sql view model analytics.example ............................. [[32mCREATE VIEW[0m in 10.27s]
+[0m21:18:45.545696 [debug] [Thread-1 (]: Finished running node model.vortex.example
+[0m21:18:45.576935 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:45.616763 [debug] [MainThread]: On master: BEGIN
+[0m21:18:45.632093 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:18:45.991613 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m21:18:45.994564 [debug] [MainThread]: On master: COMMIT
+[0m21:18:45.997834 [debug] [MainThread]: Using postgres connection "master"
+[0m21:18:46.004153 [debug] [MainThread]: On master: COMMIT
+[0m21:18:46.008172 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m21:18:46.010814 [debug] [MainThread]: On master: Close
+[0m21:18:46.018885 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:18:46.023057 [debug] [MainThread]: Connection 'list_vortex' was properly closed.
+[0m21:18:46.030449 [debug] [MainThread]: Connection 'model.vortex.example' was properly closed.
+[0m21:18:46.045440 [info ] [MainThread]: 
+[0m21:18:46.049177 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 30.25 seconds (30.25s).
+[0m21:18:46.067602 [debug] [MainThread]: Command end result
+[0m21:18:48.707532 [info ] [MainThread]: 
+[0m21:18:48.818359 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:18:48.878147 [info ] [MainThread]: 
+[0m21:18:48.964043 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m21:18:49.130312 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 46.907143, "process_user_time": 12.429979, "process_kernel_time": 36.950497, "process_mem_max_rss": "110400", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:18:49.151338 [debug] [MainThread]: Command `dbt run` succeeded at 21:18:49.150990 after 46.93 seconds
+[0m21:18:49.192542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cd8a5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47d0d4e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70f47cf538d0>]}
+[0m21:18:49.269746 [debug] [MainThread]: Flushing usage events
