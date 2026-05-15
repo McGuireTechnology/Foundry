@@ -1,51 +1,33 @@
-import json
-import os
-import uuid
-from datetime import UTC, datetime
+import sentry_sdk
+from fastapi import FastAPI
+from fastapi.routing import APIRoute
+from starlette.middleware.cors import CORSMiddleware
 
-import redis
-from fastapi import FastAPI, Header
-from pydantic import BaseModel, Field
-
-
-app = FastAPI(title="Vortex FastAPI")
-
-REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379/0")
-EXAMPLE_QUEUE_KEY = os.getenv("EXAMPLE_QUEUE_KEY", "vortex:example:events")
+from app.api.main import api_router
+from app.core.config import settings
 
 
-class ExampleEventIn(BaseModel):
-    event_type: str = Field(description="Logical event name, for example: page_view")
-    user_id: str = Field(description="User identifier")
-    value: float = Field(default=1.0, description="Optional numeric value for aggregations")
-    source: str = Field(default="fastapi", description="Origin service")
+def custom_generate_unique_id(route: APIRoute) -> str:
+    return f"{route.tags[0]}-{route.name}"
 
 
-def _redis_client() -> redis.Redis:
-    return redis.Redis.from_url(REDIS_URL, decode_responses=True)
+if settings.SENTRY_DSN and settings.ENVIRONMENT != "local":
+    sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True)
 
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    generate_unique_id_function=custom_generate_unique_id,
+)
 
-@app.get("/health")
-def health(x_api_version: str | None = Header(default=None, alias="X-API-Version")) -> dict[str, str]:
-    return {"status": "ok", "api_version": x_api_version or "unknown"}
+# Set all CORS enabled origins
+if settings.all_cors_origins:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.all_cors_origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-
-@app.post("/example/events")
-def enqueue_example_event(
-    payload: ExampleEventIn,
-    x_api_version: str | None = Header(default=None, alias="X-API-Version"),
-) -> dict[str, str | int]:
-    event_id = str(uuid.uuid4())
-    body = {
-        "event_id": event_id,
-        "event_type": payload.event_type,
-        "user_id": payload.user_id,
-        "value": payload.value,
-        "source": payload.source,
-        "created_at": datetime.now(UTC).isoformat(),
-        "api_version": x_api_version or "unknown",
-    }
-    client = _redis_client()
-    client.lpush(EXAMPLE_QUEUE_KEY, json.dumps(body))
-    queue_depth = client.llen(EXAMPLE_QUEUE_KEY)
-    return {"status": "queued", "event_id": event_id, "queue_depth": queue_depth}
+app.include_router(api_router, prefix=settings.API_V1_STR)

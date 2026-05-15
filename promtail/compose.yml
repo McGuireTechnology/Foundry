@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     volumes:
       - /var/log:/var/log:ro
-      - ./promtail/promtail-config.yml:/etc/promtail/config.yml:ro
+      - ./promtail-config.yml:/etc/promtail/config.yml:ro
     command: -config.file=/etc/promtail/config.yml
     depends_on:
       - loki

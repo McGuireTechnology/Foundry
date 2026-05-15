@@ -93,6 +93,8 @@ def init_db() -> None:
         DataEntity,
         Database,
         EntityRecord,
+        OdsIdentityComputer,
+        OdsIdentityUser,
         User,
     )
 

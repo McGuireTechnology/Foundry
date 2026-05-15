@@ -35,8 +35,15 @@ class ConnectionRead(BaseModel):
 class ConnectionSyncRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    entity_name: str = Field(default="directory", min_length=1, max_length=64)
+    entity_name: str = Field(default="users", min_length=1, max_length=64)
     cursor_value: str | None = Field(default=None, max_length=255)
+
+
+class ConnectionTestResponse(BaseModel):
+    connection_id: str
+    connector_type_slug: str
+    status: str
+    message: str
 
 
 class ConnectionSyncResponse(BaseModel):

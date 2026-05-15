@@ -1,7 +1,7 @@
 services:
   minio:
     profiles: ["minio"]
-    image: minio/minio:RELEASE.2026-04-01T00-00-00Z
+    image: minio/minio:${MINIO_VERSION:-latest}
     restart: unless-stopped
     command: server /data --console-address ":9001"
     environment:
